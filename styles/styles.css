@@ -1,0 +1,362 @@
+/*ALL PAGES*/
+.navbar-brand { /*Sets the Navbar brand to Lexend font*/
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 1.6rem;
+}
+
+footer{ /*centres the footer text*/
+  text-align: center;
+  margin-top: 5rem;
+}
+
+h1{font-size: 1.7rem;
+  }
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4{
+  font-size: 1.1rem;
+}
+
+h5{
+  font-size: 1rem;
+}
+
+a {
+  color: #236AFF;
+  text-decoration: underline;
+}
+
+.nav-link:focus{ /*Overrides the bootstrap to ensure that underline stays with the link when link has focus*/
+  text-decoration: underline;
+}
+
+a:focus {
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+.text-white:focus {
+  outline-style: solid;
+  outline-color: white;
+  outline-width: 2px;
+}
+
+h2:focus {
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+textarea:focus {
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+input:focus{
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+select:focus{
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+img{ /*this makes sure that the image scales to fit the view port but does not exceed its original size*/
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.skiptocontent{ /*Skip to content is beyond the visible page (above) unless it has the focus*/
+  padding: 1px;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    color: white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #BF1722;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 100;
+}
+
+.skiptocontent:focus{ /*Moves the skip to content link to an visible place and ensures no annoying black line on focus*/
+  top: 0px;
+  outline: none;
+}
+
+.mainlogo{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  text-decoration: none; /*Ensures that there is no underline for the main logo*/
+}
+
+.mainlogo:focus{ /*Ensures that fotus is indicated by a white box for the main logo*/
+  outline-style: solid;
+  outline-color: white;
+  outline-width: 2px;
+}
+
+/*HOME PAGES*/
+.textCentre{
+  text-align: center;
+}
+
+.firstParaMargin{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.headingLink{ /*Ensures that the headings which are also links are black*/
+  color: black;
+}
+
+/*CONTENT PAGES*/
+.headingTopPadding{
+  padding-top: 6rem; /*puts padding above the h1 and h2s in the main content.  This avoids the problem of the titles getting stuck under the navbar. 6rem set to ensure content not lost on 400% zoom*/
+}
+
+.pageContents{
+  padding-top: 1.2rem; /*Ensures that the 'Page Contents' H1 is level with the top of the Elements &Tab order page one, given that Element and tab order has a 6rem padding*/
+}
+
+.standardContents {
+  position: relative;
+  margin-left: 200px; /*provides space for the sidbar.  This is collapsed when the sidbar disappears, see @media .sidenav*/
+  margin-right: 9rem; /*gives some space on the right to make the content neater.  This dissappears afer 991px via media query*/
+}
+
+.sidenav {
+  height: 100%; /*height of means it takes up 100% of the total height of the viewport*/
+  width: 200px;
+  position: fixed;
+  left: 0;
+  padding-left: 14px; /*14 pixels aligns the lettering with the start of the 'A' of Accessibility Web*/
+  padding-top: 5rem; /*having a bit of padding here helps if users zoom*/
+}
+
+.sidenav a { /*sets the anchor tags to blocks in the sidenav so they appear on top of each other*/
+  display: inline-block;
+  padding-top: 0.2rem; /*puts a bit of space between the bottom of each sidenav anchor*/
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+@media (max-width: 991px){
+  .sidenav{
+    visibility: hidden; /*hides the sidenav when under 991 pixels - which is where the hamburger menu appears*/
+  }
+  .standardContents{
+    margin-left: 0; /*moves the standardContents div to the left after the sidenav has disappeared*/
+    margin-right: 0;
+  }
+  .navbar{
+    position: relative; /*bootstrap navbar takes up too much space when zoomed in, so leave it at the top*/
+  }
+}
+
+hr{
+  border-width: 1px;
+  border-color: black;
+  margin-top: 0.3rem;
+}
+
+th, td{ /*Some padding in the table cells*/
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+
+textarea{
+  padding-left: 0.2rem;
+  box-sizing: border-box;
+}
+
+input{
+  margin-left: 2rem;
+  border-color: #8a8a5c; /*Ensures that the contrast is a meets the 3:1 requirements*/
+}
+
+textarea{
+  border: 2px solid;
+  border-color: #8a8a5c; /*Ensures that the contrast is a meets the 3:1 requirements*/
+
+}
+
+.btn:focus{ /*Toggles button colours on focus to ensure contrast ratio compliance*/
+  background-color: #C2C2A3;
+  color: black;
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+/*HOME PAGE*/
+.homeContents{
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 6rem;
+}
+
+.card {
+  margin-bottom: 2rem; /*stops the top of one card hitting the bottom of another*/
+}
+
+
+.exampleMarginLeft { /*puts a bit of padding on the left for the example headings and links*/
+  margin-left: 2rem;
+}
+
+.bottomPad{
+  padding-bottom: 1rem; /*puts a bit of padding on the bottom for the certain items in the examples*/
+}
+
+.block{ /*Makes the example links display as blocks*/
+  display: block;
+}
+
+
+/*ELEMENT AND TAB ORDER PAGES*/
+.exampleList { /* for the numbers and the bullets to start at the same degree right as the H3 they have to be pushed a litte further over than the rest of the example content*/
+  padding-left: 3rem;
+}
+
+
+/*IMAGES AND vIDEOS*/
+.pictureDivLeft{
+height: 235px;
+width: 310px;
+}
+
+.pictureDivRight{
+  height: 235px;
+  width: 310px;
+  margin-left: 320px
+}
+
+iframe{
+  max-width: 100%;
+}
+
+.appleImg{
+  margin-top: 1rem;
+}
+
+/*FORMS*/
+#exampleCheckbox{ /*Puts a space beween the checkbox and the text.  exampleCheckbox ID already exists for an explicit label*/
+  margin-right: 1rem;
+}
+
+#firstName, #lastName{ /*There was a problem with the text boxes not aligning equally on the left.  Taking them out of the HTML flow with absolute position resolves.*/
+  position: absolute;
+  left: 6rem;
+}
+
+#outputContent{ /*Dislaying inline pushes the text to the right of the button*/
+  display: inline;
+  margin-left: 1rem;
+}
+
+#exampleButton{
+  width: 6rem;
+}
+
+#dateSubmit{
+  margin-left: 2rem;
+}
+
+.slidecontainer { /*recommended slider CSS from W3 Schools*/
+  width: 100%;
+}
+
+.rangeOutput{ /*Positions the text next to the slider*/
+  margin-left: 1rem;
+  position: relative;
+  bottom: 0.5rem;
+}
+
+select{
+  border-color: #8a8a5c;
+}
+
+/*WINDOW PAGE*/
+
+
+/*ADJUSTMENT PAGE*/
+.subcatTopMargin{
+  margin-top: 2rem;
+}
+
+.overlapDiv{
+  width: 950px;
+  background-color: #ebebe0;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.1rem;
+  padding-right: 1rem;
+}
+
+
+@media (max-width: 991px){
+.overlapDiv{
+  position: absolute;
+  top: 550px;
+}
+}
+
+.relativeSection { /*It is necessary to make the containing div relative, for the absolute positioning of the overlapDiv to position itself relative to the section*/
+  position: relative;
+}
+
+.textNotResize{ /*Class for the division*/
+  width: 82.9%;
+  background-color: #ebebe0;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.textFixedSize{ /*for the span*/
+  font-size: 16px;
+}
+
+/*FOCUS*/
+h3:focus {
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+.examleFocusHeading{
+display: inline;
+}
+
+#firstInputBox{
+  margin-left: 151px;
+}
+
+#secondInputBox{
+  margin-left: 13px;
+}
+
+#thirdInputBox{
+  margin-left: 145px;
+}

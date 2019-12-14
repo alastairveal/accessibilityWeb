@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8"><!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+      <meta name="description" content="Images and video can be challenging for users with visual or hearing impairments. There are a number of accessibility features that can help." /> <!--the description is the bit that google displays-->
+      <meta name="keywords" content="alt text, image only, video, audio description" /><!--makes the website easier to find for search engines-->
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet"><!--Google Fonts-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
+      <title>Accessibility Web Standard Content Page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+
+<div class="container-fluid">
+
+  <div class="sidenav" role="region" aria-labelledby="pageContents">
+    <h2 class="pageContents" id="pageContents">Page Contents</h2>
+        <a href="#imagesAltText">Images & Alt Text</a><br/>
+        <a href="#imageOnly">Image Only Text</a><br/>
+        <a href="#videoPlayer">Video Players</a><br/>
+        <a href="#audioDescription">Audio Description</a>
+      </div>
+
+      <main> <!--using main is a semantic div for screen readers-->
+        <div class="standardContents" id="maincontent">
+          <h1 class="headingTopPadding">Images & Video</h1>
+          <p>Images and video can be challenging for users with visual or hearing impairments. There are a number of accessibility features that can help.</p>
+          <section role="region" aria-labelledby="imagesAltText">
+            <h2 class="headingTopPadding" id="imagesAltText">Images & Alt Text</h2>
+            <hr>
+            <p>Images should have descriptions for users unable to see. Web designers can insert descriptions of images called alt text, which are read out loud by screening reading software. All well designed websites should have alt text for every image that contributes significantly to the page. If an image does not have alt text, screen reading software may either ignore the image, or identify that the element is an image by stating out loud the word 'Image'. The behaviour of the screen reading software when the image does not have alt text depends on the make of sofware and the settings. Sometimes, if an image is purely decorative and does not contribute to the information on the page, a web designer may try and hide the images from screen reading software.  Despite attempts of web designers to hide decorative images, these hidden images may or may not be spotted by screen reading software depending on the techniques the designers have used and the screen reading software of the user.</p>
+            <p>Below are three identical pictures of some apples. The first image has an alt text description, the second image has no alt text description, and the third image has been ‘hidden’ from screen reading software (but may still be identified as an image depending on the screen reading software used).</p>
+
+            <div class="row">
+              <div class="col-md-3 exampleMarginLeft bottomPad">
+                <img src="images/Apple.jpg" height="225px" class="appleImg" width="300px" alt="showing a red apple on a tree in the foreground and several more apples in the background"/>
+                <p>First image, image with alt text. The alt text that screen reader users hear is "showing a red apple on a tree in the foreground and several more apples in the background".</p>
+              </div>
+              <div class="col-md-3 exampleMarginLeft bottomPad">
+                <img src="images/Apple.jpg" height="225px" class="appleImg" width="300px"/>
+                <p>Second image, image without alt text. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
+              </div>
+              <div class="col-md-3 exampleMarginLeft bottomPad">
+                <img src="images/Apple.jpg" alt="" class="appleImg" height="225px" width="300px"/>
+                <p>Third image, decorative image, deliberately 'hidden' from screen reading software. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
+              </div>
+            </div>
+          </section>
+          <section role="region" aria-labelledby="imageOnly">
+            <h2 class="headingTopPadding" id="imageOnly">Image Only Text</h2>
+            <hr>
+            <p>Some images contain text within the image.  The image is an image of text. The text embedded in the image cannot be read out loud by screen reading software.  Ideally the image will have alt text, which will describe the text written on the image.  Below is an image, inside of which there is some text.</p>
+              <img src="images/ImageText.jpg" height="250px" width="300px" alt="showing text in an image.  The backround is of clouds. The text in the image states, this is some text in an image, this text will not be read aloud by screen reading software." class="exampleMarginLeft"/>
+          </section>
+          <section role="region" aria-labelledby="VideoPlayer">
+            <h2 class="headingTopPadding" id="videoPlayer">Video Players</h2>
+            <hr>
+            <p>There are many kinds of video players that are available which can be used in websites. Different video players will work slightly differently. This page uses one of the most common video players, the YouTube video player.  The video itself is hosted on the YouTube website, but plays inside the current page.</p>
+            <h3 class="exampleMarginLeft">Example Video</h3>
+            <iframe class="exampleMarginLeft bottomPad" width="878" height="490" src="https://www.youtube.com/embed/pQO4S1t2uiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video on JAWS software"></iframe>
+            <p>The YouTube video player can be accessed using the keyboard. The TAB key can be used to cycle forward through the controls and the SPACEBAR to activate. Therefore to play the video, press the TAB key until the play button is reached and press on SPACEBAR. Pressing on the RIGHT ARROW key on the keyboard will skip forward in the recording and pressing on the LEFT ARROW skips backwards.</p>
+            <p>The YouTube video player has the following controls and links.</p>
+            <ul>
+              <li><b>Channel Link:</b> Link to the YouTube channel where the video came from.</li>
+              <li><b>Video Link:</b> Link to the item on the YouTube website.</li>
+              <li><b>Watch Later Button:</b> Save the video to watch later on YouTube.</li>
+              <li><b>Share Menu Item:</b> Shows the web address (URL) of the video, so it can be copy and pasted and sent on to others. Activating this control opens a sub menu with a number of options for sharing the video.</li>
+              <li><b>More Videos List:</b> List of links to more videos similar to the current video.</li>
+              <li><b>Play Button:</b> Plays and pauses the video.</li>
+              <li><b>Seek Slider:</b> Indicates how far into the video the user is (navigate using the LEFT and RIGHT ARROW keys).</li>
+              <li><b>Mute Button:</b> Turns the sound on and off.</li>
+              <li><b>Volume Slider:</b> Increases the volume, use the LEFT and RIGHT ARROW keys to adjust.</li>
+              <li><b>Subtitles/Captions Button: </b>Puts in captions into the video.</li>
+              <li><b>Settings Menu Item: </b>Change the player settings.  Activating this control opens a sub menu with a number of settings controls.</li>
+              <li><b>Full Screen Button: </b>Button to watch the video in full screen.</li>
+            </ul>
+            <p>Not all of these controls are visible all the time. The time slider only appears when the video has started playing.  The list of more videos only appears when the video is paused or finished.</p>
+          </section>
+          <section role="region" aria-labelledby="audioDescription">
+            <h2 class="headingTopPadding" id="audioDescription">Audio Description</h2>
+            <hr>
+            <p>Audio description is a narration of the action in the video for visually impaired users.  Most videos will not have audio description.  Underneath is an example of a video with audio description.</p>
+            <iframe class="exampleMarginLeft bottomPad" width="717" height="538" src="https://www.youtube.com/embed/Fa4kr9ohjBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video example with Audio Description"></iframe>
+
+          </section>
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+</footer>
+
+<!--style="text-align: center-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

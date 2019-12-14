@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8"><!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+      <meta name="description" content="The focus is the part of the web page that currently receives the input of the keyboard. Not all elements on a website are capable of receiving the focus." /> <!--the description is the bit that google displays-->
+      <meta name="keywords" content="focus, tab order, keyboard trap" /><!--makes the website easier to find for search engines-->
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet"><!--Google Fonts-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
+      <title>Accessibility Web Focus</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+
+<div class="container-fluid">
+
+      <div class="sidenav" role="region" aria-labelledby="pageContents">
+        <h2 class="pageContents" id="pageContents">Page Contents</h2>
+        <a href="#focusAndTab">Focus & Tab Order</a><br/>
+        <a href="#atypicalElementsWithFocus">Atypical Focus</a>
+        <a href=#keyboardTrap>Keyboard Trap</a>
+      </div>
+
+      <main> <!--using main is a semantic div for screen readers-->
+        <div class="standardContents">
+          <h1 class="headingTopPadding" id="maincontent">Focus</h1>
+          <p>The focus is the part of the web page that currently receives the input of the keyboard. For example, an online application form could have a box for the first name and last name.  If the user is currently typing in the first name box, the focus is on the first name box. Not all elements on a website are capable of receiving the focus. Usually only elements that can be interacted with using the keyboard such as input boxes, links or buttons can receive the focus. By contrast, items such as paragraphs, headings or images are not generally capable of receiving the focus, unless the web developer has specifically designed the page to make that possible.</p>
+          <section role="region" aria-labelledby="focusAndTab">
+            <h2 class="headingTopPadding" id="focusAndTab">Focus & Tab Order</h2>
+            <hr>
+            <p>To move the focus to an element, the user can either click on the item with the mouse, or press the TAB key.  Pressing the TAB key moves the focus to the next element capable of receiving the focus, and pressing the SHIFT & TAB key together moves the focus back. Once the user gets to the end of the page, the focus should go back to the first element.  On this website, a black or white box appears (changing according to the background colour) around the element where the focus is. Most websites do not have any special formatting to indicate where the focus is. However, your web browser will indicate where the focus is by putting a box around the element with the current focus, which is typically a blue or dotted box.  The browser generated focus indicators (a blue or dotted box) can be difficult to see.  Below are three example elements capable of receiving the focus; a link, an edit area where you can type in text and a checkbox. Try using TAB and SHIFT & TAB
+             to navigate between them.
+          </p>
+          <h3 class="exampleMarginLeft">Example Items that Receive the Focus</h3>
+          <p class="exampleMarginLeft"></p>
+          <a href="#maincontent" class="exampleMarginLeft">Example Link - Focus (Top of page)</a><br />
+          <label for="exampleEditArea" class="exampleMarginLeft">Example Edit Area</label>
+          <br /><!--To make the label  appear above  the edit area-->
+          <textarea class="exampleMarginLeft" id="exampleEditArea" name="story"rows="5" cols="33">Type text here...
+          </textarea>
+          <form class="bottomPad">
+            <input type="checkbox" name="Checkbox Example" value="Example" class="exampleMarginLeft thickCheckBox">Press Spacebar to put a tick in the box.<br />
+          </form>
+
+          </section>
+
+
+
+          <section role="region" aria-labelledby="atypicalElementsWithFocus">
+            <h2 class="headingTopPadding" id="atypicalElementsWithFocus">Atypical Elements with Focus</h2>
+            <hr>
+            <p>Sometimes, elements which do not normally take the focus are able to receive the focus.  This can happen where an element has another element embedded inside of it.  For example, an image, which normally does not receive the focus, will receive the focus if it has a link inside the image (so the user can click on the image or press ENTER when the image has the focus to open a new page). Also, some designers may choose to code the page so that an element can take the focus. For instance, a heading could be made to accept the focus.</p>
+            <p class="exampleMarginLeft">The image below has a link to the AccessiblityWeb home page. This image is capable of receiving the focus because it has a link.</p>
+            <a class="exampleMarginLeft" href="index.html"><img src="images/Home.png" height="250px" width="300px" alt="home"/></a>
+            <br />
+            <br />
+            <p class="exampleMarginLeft">The heading below can take the focus because it has been programmed to do so.</p>
+            <h3 class="exampleMarginLeft examleFocusHeading" tabindex="0">Heading with Focus</h3>
+          </section>
+
+          <section role="region" aria-labelledby="keyboardTrap">
+            <h2 class="headingTopPadding" id="keyboardTrap">Keyboard Trap</h2>
+            <hr>
+            <p>A keyboard trap occurs when a user can reach an element or set of elements using the TAB key, but cannot navigate away from that element or set of elements using the TAB key. This only happens if the page has been poorly designed. One way out of a keyboard trap for users who cannot use the mouse is by refreshing the page (F5 key), which can put the focus back onto the beginning of the page depending on the browser. However with some browsers refresing does not put the focus back onto the beginning of the page so the focus remains stuck in the keyboard trap. In that case the page will need to be closed by pressing the ALT + F4 keys in Windows or Command W on Mac.</p>
+            <p>There is a keyboard trap in the example form below. There are three input boxes. The focus will get stuck in the second input box.</p>
+            <form>
+              <fieldset>
+                <legend class="exampleMarginLeft">Example Keyboard Trap - Three Input Boxes</legend>
+                <div class="exampleMarginLeft">
+                  <label for="firstInputBox">First Input Box</label>
+                  <input id="firstInputBox" type="text" value="" name="firstInputBox">
+                </div>
+                <div class="exampleMarginLeft">
+                  <label for="secondInputBox">Second Input Box (Keyboard Trap)</label>
+                  <input id="secondInputBox" type="text" value="" class="trap" onblur="this.focus();" name="secondInputBox">
+                </div>
+                <div class="exampleMarginLeft">
+                  <label for="thirdInputBox">Third Input Box</label>
+                  <input id="thirdInputBox" type="text" value="" name="thirdInputBox">
+                </div>
+              </fieldset>
+            </form>
+          </section>
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+</footer>
+
+<!--style="text-align: center-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

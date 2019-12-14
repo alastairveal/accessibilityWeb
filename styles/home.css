@@ -1,0 +1,17 @@
+
+a:visited { /*To get rid of link behaviours on the home page only*/
+  text-decoration: none;
+}
+
+a:hover { /*To get rid of link behaviours on the home page only*/
+  text-decoration: underline;
+  color: black;
+}
+
+a:active { /*To get rid of link behaviours on the home page only*/
+  text-decoration: none;
+}
+
+.headingLink{ /*Ensures that the headings which are also links are black*/
+  color: black;
+}

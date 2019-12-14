@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8"><!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+      <meta name="description" content="The content in web pages can appear within browsers in a variety of different ways. This can be confusing, especially for screen reader users. This section below discusses the various ways that web pages can be opened and displayed." /> <!--the description is the bit that google displays-->
+      <meta name="keywords" content="frame, modal, overlay, alert, tab" /><!--makes the website easier to find for search engines-->
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet"><!--Google Fonts-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
+      <title>Accessibility Web Windows</title>
+      <!-- Font Awesome -->
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+
+<div class="container-fluid">
+
+      <div class="sidenav" role="region" aria-labelledby="pageContents">
+        <h2 class="pageContents" id="pageContents">Page Contents</h2>
+        <a href="#links">Links</a><br/>
+        <a href="#tabs">Tabs</a><br/>
+        <a href="#alert">Alerts</a><br/>
+        <a href="#modal">Modals</a><br/>
+        <a href="#collapse">Collapse</a><br/>
+        <a href="#pdf">PDFs</a><br/>
+        <a href="#frame">Frames with Text</a>
+      </div>
+
+      <main> <!--using main is a semantic div for screen readers-->
+        <div class="standardContents">
+          <h1 class="headingTopPadding" id="maincontent">Windows</h1>
+          <p>The content in web pages can appear within browsers in a variety of different ways. This can be confusing, especially for screen reader users. This section below discusses the various ways that web pages can be opened and displayed.</p>
+          <section role="region" aria-labelledby="Links">
+            <h2 class="headingTopPadding" id="Links">Links</h2>
+            <hr>
+            <p>Links are connections to other web pages or parts of a web page. Clicking on the link or pressing the ENTER key when the link has the focus will activate the link. Links are normally coloured blue. Links can perform a range of different actions including opening a new page within the existing tab, opening a new page in a new tab, open an email client or open an overlay window. To find out more about tabs and overlays read below. Underneath are examples of different kinds of links.</p>
+              <a class="exampleMarginLeft" href="index.html">AccessibilityWeb Home Page (Opens in same tab)</a><br />
+              <a class="exampleMarginLeft" href="index.html" target="_blank">AccessibilityWeb Home Page (Opens in a different tab)</a><br />
+              <a class="exampleMarginLeft" href="#maincontent">Top of this Page</a><br />
+              <a class="exampleMarginLeft" href="mailto:someone@example.com">Email Example</a><br />
+          </section>
+
+          <section role="region" aria-labelledby="tabs">
+            <h2 class="headingTopPadding" id="tabs">Tabs</h2>
+            <hr>
+            <p>A tab is a feature of web browsers that enables the user to have multiple web pages open within one browser window. This is to make navigating web pages easier, as users can quickly switch between multiple pages. To navigate between tabs using a mouse, users simply click on the tab at the top of the window. Alternatively press the CTRL & T to open a new tab Windows (Using the Firefox, Internet Explorer, Chrome and Edge browsers). Pressing and holding on the CTRL key and then pressing the TAB key will cycle to the next tab.  On these browsers ALT and F4 will close the current tab. On a Mac computer using the Safari browser, COMMAND & T will open a new TAB, use COMMAND & SHIFT & LEFT or RIGHT ARROW to navigate between tabs and COMMAND & W to close the tab. Some links, instead of opening a new page within the existing window, will open a new page in another tab. Tabs should not be confused with the TAB key, which is used to cycle forward the focus to the next interactive element. Click on the link below to open the AccessibilityWeb home page in a new window. </p>
+            <a class="exampleMarginLeft" href="index.html" target="_blank">AccessibilityWeb Home Page (Opens in a different tab)</a><br />
+          </section>
+
+
+          <section role="region" aria-labelledby="alert">
+
+            <h2 class="headingTopPadding" id="alert">Alerts</h2>
+            <hr>
+            <p>An alert window is a small window that pops up in front of the current window, to alert the user to something on the page, or to prompt the user to do something. Whilst the alert is open, the user cannot interact with the rest of the page. One of the buttons in the alert allows the user to close the alert (often this is a button titled ‘OK’). Alerts often used for form validation or when navigating away from a page where form fields have only been partially filled in. The content in an alert window is very basic. Try experimenting with the prompt below.</p>
+
+
+            <button class="btn btn-dark exampleMarginLeft" onclick="promptFunction()">Alert</button>
+                    <script>
+                      function promptFunction() {
+                      prompt("Please enter some text");
+                        }
+                    </script>
+          </section>
+
+          <section role="region" aria-labelledby="modal">
+            <h2 class="headingTopPadding" id="modal">Modals</h2>
+            <hr>
+            <p>A modal, or an overlay window is a window that opens in front of the current window. When the modal or overlay window is open the content on the original window is covered with a grey mask. Unlike an alert, an modal or overlay window can support all the of the same kind of content as a standard web page. It is often used to provide extra information in a website to avoid making a website look too cluttered. Modalys or overlays can also be used to prompt the user to take certain actions, such as provide consent for cookies. There is often a close button on a modal or overlay, which is usually on the top right hand corner, and is often the first button on the overlay. Usually, but not always, when an overlay window is opened, the user cannot interact with the content behind the overlay. Depending on how the web page is designed, the web page may announce when a modal window is going to be opened. In a poorly designed page a modal window could open and a screen reader user is not aware that the modal has opened.</p>
+            <!-- Trigger/Open The Modal -->
+            <button type="button" class="btn btn-dark exampleMarginLeft" data-toggle="modal" data-target="#exampleModal" aria-label="Launch Modal Opens in Overlay">
+              Launch Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" aria-label="Overlay window open">Example Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close Button">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    This is some text in the modal window.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section role="region" aria-labelledby="collapse">
+            <h2 id="collapse" class="headingTopPadding">Collapse</h2>
+            <hr>
+
+            <p>A collapse is used to show and hide content. Unlike an overlay or modal, this content is contained in the main page.  This is used to make the main page look less cluttered. Content can be revealed and then hidden using the button or link that opens and closes the collapsed content. Below is an example of a collapse. Activate the link to reveal and hide the content.</p>
+            <p>
+            <a class="exampleMarginLeft" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Collapsed Content <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+            Example content in a collapse. Activate the link above to hide this content.
+            </div>
+            </div>
+          </section>
+
+          <section role="region" aria-labelledby="pdf">
+            <h2 class="headingTopPadding" id="pdf">PDFs</h2>
+            <hr>
+            <p>PDFs are files which are primarily a mix of text and images. There are a number of accessibility issues with PDFs. Like a Word document or a book, PDFs are divided into separate printable pages. This means that the length of each page is limited, unlike web pages, which have no constraints on their size. PDFs are easy to create, the text in PDFs cannot easily be edited and they can be easily printed out. For these reasons it common for PDFs to be used on websites for reports, guides, tickets and journal articles. PDFs hosted on web pages will usually open in the browser window, often in new tab. When viewing a PDF in a browser, there a number of controls which the user can navigate to using the TAB key. The controls available will depend on the browser being used. Typical controls include:</p>
+              <ul>
+                <li><strong>Page Number:</strong> The user can type in the page number they want to view.</li>
+                <li><strong>Page Rotation:</strong> The page can be rotated if the text is the wrong way up.</li>
+                <li><strong>Download:</strong> To download the PDF and view offline.</li>
+                <li><strong>Print:</strong> To print out the page.</li>
+                <li><strong>Fit to Page:</strong> Zooms in the page as much as possible without losing content on the left or right hand sides.</li>
+                <li><strong>Zoom:</strong> Zooms in and out. </li>
+              </ul>
+              <p>Below is a link to an example PDF.</p>
+              <a class="exampleMarginLeft" href="WinnieThePooh.pdf" download>Open Example PDF (Accessible)</a><br />
+              <br />
+              <p>Not all PDFs can be read aloud by screen reading software. Some PDFs are image only PDFs, meaning that the text in the PDF is an image of text, not actual electronic text. Image only files cannot be read aloud by screen reading software without using optical character recognition (OCR) to recognise the words in the PDF. If downloaded, the text of the image only PDFs can only be accessed by screen reading software users by using a document conversion application to convert the PDF either to a different format such as Word or converting the PDF to a PDF with electronic text.  Newer versions of Microsoft Word will convert PDFs, including image only PDFs, to Word documents. Below is a link to an example of an inaccessible image only PDF.</p>
+              <a class="exampleMarginLeft" href="WinnieThePoohInaccessible.pdf" download>Open Example PDF (Inaccessible - Image Only)</a><br />
+              <br />
+              <p>In addition, PDFs can be challenging for partially sighted users who want to zoom in. It is possible to zoom in on PDFs in a browser (see section on <a href="adjustments.html#zoom">zooming</a> on the adjustments page). However PDFs have no word wrap. This means that as the user zooms in, content can be lost on the left and right hand sides. Content off the side of the visible area can be accessed using the LEFT or RIGHT ARROW keys, but this makes reading an awkward experience.</p>
+            </p>Downloading the PDF is useful because it can be viewed offline. Downloaded PDFs can be viewed using other applications such as Adobe Reader or Microsoft Word, which have more controls and options. If necessary, a downloaded PDF can also be converted to a different file format.</p>
+          </section>
+
+          <section role="region" aria-labelledby="frame">
+            <h2 class="headingTopPadding" id="frame">Frames with Text Content</h2>
+            <hr>
+            <p>Files with text based content, such as PDFs, can be embedded into a web page in a frame (section of a web page). This can be particularly challenging for accessibility reasons. Some frames do not have content that can be read aloud by screen reading software, because the screen reading software does not recognise the file format, or the file is image only text (a picture of text instead of electronic text). Screen reading software can access the text of PDF inside a frame, but it can be confusing for screen reader users, as the user is viewing one file format from within another file format. Often it is easier just to download text based content such as PDFs, which well designed pages will have as an option. If viewing a PDF in a frame, there are a number of controls such as page number or download. These are the same controls available when viewing a PDF in a browser (see section on PDFs above). To get to the actual content, screen reader users need to press the DOWN ARROW key until past the controls in the frame. Sighted users who cannot operate a mouse can also find text based content in frames difficult and it is often just easier to download the content if possible. This is because if the amount of content in the frame is longer than the length of the frame, the frame may have a scroll bar to navigate up and down the document. Getting the focus of the page to access the scroll bar of the frame can be difficult (The UP and DOWN ARROW keys can be used to move the content).</p>
+
+            <p>Below is a page from Winnie the Pooh embedded in a frame in this web page as PDF. Screen reader users can press the DOWN ARROW key to navigate past the controls and get to the PDF content.</p>
+            <iframe title="Example PDF Frame, PDF of Winnie the Pooh" class="exampleMarginLeft" src="WinnieThePooh.pdf" width="90%" height="500px;">
+              This browser does not support PDFs.
+            </iframe>
+
+
+
+          </section>
+
+
+
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+</footer>
+
+<!--style="text-align: center-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

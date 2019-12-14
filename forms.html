@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+  <meta name="description" content="A form on a web page allows the user to enter data. There are many kinds of form controls such as text boxes, comboboxes or buttons. Screen reading software will announce which kind of form control currently has the focus." />
+  <!--the description is the bit that google displays-->
+  <meta name="keywords" content="text box, combobox, checkbox, button, drop down menu, date picker, range, validation, slider" />
+  <!--makes the website easier to find for search engines-->
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet">
+  <!--Google Fonts-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="icon" href="myFavicon.ico" />
+  <!--code to link to the favicon-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+  <!-- Bootstrap Date-Picker Plugin -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="styles/date.css">
+
+  <!--Date Picker Script-->
+  <script>
+    $(document).ready(function() {
+      var date_input = $('input[name="date"]'); //our date input has the name "date"
+      var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+      var options = {
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+  </script>
+
+
+  <title>Accessibility Web Standard Forms</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+    <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+    <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+      </li>
+      <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+      </li>
+    </ul>
+  </div>
+  </nav>
+
+
+  <div class="container-fluid">
+
+    <div class="sidenav" role="region" aria-labelledby="pageContents">
+      <h2 class="pageContents" id="pageContents">Page Contents</h2>
+      <a href="#textInput">Text Input</a><br/>
+      <a href="#checkbox">Checkbox</a><br/>
+      <a href="#radiobutton">Radio Button</a><br/>
+      <a href="#dropDownMenu">Drop Down Menu</a><br/>
+      <a href="#button">Button</a><br/>
+      <a href="#datePicker">Date Picker</a><br/>
+      <a href="#range">Range</a><br/>
+      <a href="#validation">Validation</a>
+
+    </div>
+
+    <main>
+      <!--using main is a semantic div for screen readers-->
+      <div class="standardContents">
+        <h1 class="headingTopPadding" id="maincontent">Forms</h1>
+        <p>A form on a web page allows the user to enter data. There are many kinds of form controls such as text boxes, comboboxes or buttons. Screen reading software will announce which kind of form control currently has the focus.</p>
+        <section role="region" aria-labelledby="textInput">
+          <h2 class="headingTopPadding" id="textInput">Text Input</h2>
+          <hr>
+          <p>A text input is a box that the user can type in data, such as name or address. Below is an example with first name and last name. Screen reading software will announce when the user is in an edit area and can type in text. Sometimes some
+            edit areas automatically get the focus when the web page is opened (usually this is only used for search boxes).</p>
+          <form>
+            <label for="firstName" class="exampleMarginLeft">First Name: </label><input type="text" id="firstName" name="firstName" /><br>
+            <label for="lastName" class="exampleMarginLeft">Last Name: </label><input type="text" id="lastName" name="lastName" /><br>
+          </form>
+        </section>
+        <section role="region" aria-labelledby="checkbox">
+          <h2 class="headingTopPadding" id="checkbox">Checkbox</h2>
+          <hr>
+          <p>A checkbox is a square box that can be ticked. It is used to select an option. When the checkbox has the focus, it can be checked and unchecked using the SPACEBAR key. The label for the checkbox normally appears after
+            the checkbox (unlike most form controls where the label comes before the control).</p>
+          <form>
+            <input type="checkbox" name="exampleCheckbox" id="exampleCheckbox" class="exampleMarginLeft" /><label for="exampleCheckbox">Example Checkbox</label>
+          </form>
+        </section>
+        <section role="region" aria-labelledby="radiobutton">
+          <h2 class="headingTopPadding" id="radiobutton">Radio Button</h2>
+          <hr>
+          <p>A radio button is a small round control that can be selected. When the radio button has the focus, it can be selected and unselected using the SPACEBAR key, like the checkbox. Like the checkbox, the label for a radio button generally
+            comes after the button. It is usually used to enforce one choice from a set of choices, like in the example below. Once the radio button group set has the focus, use the UP and DOWN ARROW keys to get to the next option. Pressing the TAB
+            whilst a radio button has the focus will take the user to the next control, not the next option within the radio button set.</p>
+          <p class="exampleMarginLeft">Example: Please select your preferred contact method:</p>
+          <form>
+            <input class="exampleMarginLeft" type="radio" name="exampleRadio" id="post"><label for="post">Post (Use DOWN ARROW key to get to the next option)</label><br />
+            <input class="exampleMarginLeft" type="radio" name="exampleRadio" id="email" /><label for="email">Email (Use UP ARROW key to get to the previous option)</label>
+          </form>
+
+        </section>
+        <section role="region" aria-labelledby="dropDownMenu">
+          <h2 id="dropDownMenu" class="headingTopPadding">Drop Down Menu</h2>
+          </h2>
+          <hr>
+          <p>A combobox, otherwise known as a drop down menu, provides the user with a list of choices. Once the drop down menu has the focus, the UP and DOWN ARROW keys can be used to select each choice. Alternatively, if the likely first letter of
+            a choice is known, press on the letter of that choice. For example, in a list of countries, press the 'T' key to get to Taiwan. If there are several options of the same name, press the first letter of that option until the desired option
+            is located. For example to get to the 'United Kingdom in a list of countries press the 'U' key four times, as the United Kingdom is the fourth choice after Uganda, Ukraine and the United Arab Emirates.</p>
+          <h3 class="exampleMarginLeft">Example List of Countries Select</h3>
+          <form>
+            <select class="exampleMarginLeft">
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Åland Islands">Åland Islands</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="American Samoa">American Samoa</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Anguilla">Anguilla</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Aruba">Aruba</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bermuda">Bermuda</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Bouvet Island">Bouvet Island</option>
+              <option value="Brazil">Brazil</option>
+              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+              <option value="Brunei Darussalam">Brunei Darussalam</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Canada">Canada</option>
+              <option value="Cape Verde">Cape Verde</option>
+              <option value="Cayman Islands">Cayman Islands</option>
+              <option value="Central African Republic">Central African Republic</option>
+              <option value="Chad">Chad</option>
+              <option value="Chile">Chile</option>
+              <option value="China">China</option>
+              <option value="Christmas Island">Christmas Island</option>
+              <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo">Congo</option>
+              <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+              <option value="Cook Islands">Cook Islands</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Cote D'ivoire">Cote D'ivoire</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Cyprus">Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Dominica">Dominica</option>
+              <option value="Dominican Republic">Dominican Republic</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+              <option value="Faroe Islands">Faroe Islands</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="French Guiana">French Guiana</option>
+              <option value="French Polynesia">French Polynesia</option>
+              <option value="French Southern Territories">French Southern Territories</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Gibraltar">Gibraltar</option>
+              <option value="Greece">Greece</option>
+              <option value="Greenland">Greenland</option>
+              <option value="Grenada">Grenada</option>
+              <option value="Guadeloupe">Guadeloupe</option>
+              <option value="Guam">Guam</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Guernsey">Guernsey</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea-bissau">Guinea-bissau</option>
+              <option value="Guyana">Guyana</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+              <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Isle of Man">Isle of Man</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jersey">Jersey</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Kiribati">Kiribati</option>
+              <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+              <option value="Korea, Republic of">Korea, Republic of</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Macao">Macao</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Mali">Mali</option>
+              <option value="Malta">Malta</option>
+              <option value="Marshall Islands">Marshall Islands</option>
+              <option value="Martinique">Martinique</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mayotte">Mayotte</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Micronesia">Micronesia</option>
+              <option value="Moldova, Republic of">Moldova, Republic of</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nauru">Nauru</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Netherlands Antilles">Netherlands Antilles</option>
+              <option value="New Caledonia">New Caledonia</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Niue">Niue</option>
+              <option value="Norfolk Island">Norfolk Island</option>
+              <option value="Northern Macedonia">Northern Macedonia</option>
+              <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palau">Palau</option>
+              <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+              <option value="Panama">Panama</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Pitcairn">Pitcairn</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Puerto Rico">Puerto Rico</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Reunion">Reunion</option>
+              <option value="Romania">Romania</option>
+              <option value="Russian Federation">Russian Federation</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Saint Helena">Saint Helena</option>
+              <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+              <option value="Saint Lucia">Saint Lucia</option>
+              <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+              <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+              <option value="Samoa">Samoa</option>
+              <option value="San Marino">San Marino</option>
+              <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Serbia">Serbia</option>
+              <option value="Seychelles">Seychelles</option>
+              <option value="Sierra Leone">Sierra Leone</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Slovakia">Slovakia</option>
+              <option value="Slovenia">Slovenia</option>
+              <option value="Solomon Islands">Solomon Islands</option>
+              <option value="Somalia">Somalia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Suriname">Suriname</option>
+              <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+              <option value="Swaziland">Swaziland</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+              <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+              <option value="Tajikistan">Tajikistan</option>
+              <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Timor-leste">Timor-leste</option>
+              <option value="Togo">Togo</option>
+              <option value="Tokelau">Tokelau</option>
+              <option value="Tonga">Tonga</option>
+              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Turkmenistan">Turkmenistan</option>
+              <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+              <option value="Tuvalu">Tuvalu</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Vanuatu">Vanuatu</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Viet Nam">Viet Nam</option>
+              <option value="Virgin Islands, British">Virgin Islands, British</option>
+              <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+              <option value="Wallis and Futuna">Wallis and Futuna</option>
+              <option value="Western Sahara">Western Sahara</option>
+              <option value="Yemen">Yemen</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </form>
+        </section>
+
+        <section role="region" aria-labelledby="button">
+        <h2 class="headingTopPadding" id="button">Button</h2>
+        <hr>
+        A button is used to submit data or perform an action on the page. When the button as the focus, the SPACEBAR or ENTER key can be used to activate the button. Some buttons may be disabled, and will only become active after some kind of user
+        activity (e.g. selecting a date).
+        <div aria-live="assertive">
+          <p>Activate the example button below by clicking on it or pressing SPACEPAR.</p>
+          <button type="button" id="exampleButton" class="exampleMarginLeft btn btn-dark" onclick="myFunction()">Submit</button>
+          <p id="outputContent"></p>
+        </div>
+        <script>
+          function myFunction() {
+            var outputContent = document.getElementById("outputContent").innerHTML;
+            if (outputContent == "You have pressed this button!") {
+              document.getElementById("outputContent").innerHTML = "";
+              document.getElementById("exampleButton").innerHTML = "Submit";
+            } else {
+              document.getElementById("outputContent").innerHTML = "You have pressed this button!";
+              document.getElementById("exampleButton").innerHTML = "Reset";
+            }
+          }
+        </script>
+      </section>
+
+
+        <section role="region" aria-labelledby="datepicker">
+          <h2 class="headingTopPadding" id="datePicker">Date Picker</h2>
+          <hr>
+          <p>Many forms require users to input dates. This typically consists of an input box, which the user can type in the date that they want. To help users get the right dates, date input boxes often have a date picker tool. This is a calendar that
+            appears to help the user find the right dates. There are many different kinds of date picker calendars, so there is no one simple way in which a user who cannot use a mouse can access them. The simplest way to use a date input box for non-mouse users is
+            just to type in the date, in the format required. </p>
+          <p>Below is an example of a date input box with a date picker. As the user types in a date a calendar pops up. It is not necessary to use the popup calendar, users can just type in the date needed using the DD/MM/YYYY format (e.g. 1st of
+            January 2019 would be 01/01/2019). When the submit button is activated, the focus will return to the beginning of the page.</p>
+          <form class="exampleMarginLeft" method="post">
+            <div class="form-group">
+
+              <label for="date">Date</label><input id="date" autocomplete="off" name="date" placeholder="DD/MM/YYYY" type="text" />
+              <button class="btn btn-dark" name="submit" type="submit" id="dateSubmit">Submit</button>
+            </div>
+          </form>
+
+        </section>
+
+        <section role="region" aria-labelledby="range" >
+        <div aria-live="assertive">
+
+
+          <h2 class="headingTopPadding" id="range">Range</h2>
+          <hr>
+          <p>A range, or slider, is a tool that lets the user choose from a number of different values. The range element is usually horizontal with a handle (bit that moves), and moving the handle to the left and right changes the value. For users who cannot use the
+            mouse, using the LEFT and RIGHT ARROW keys lets the use the change the values when the range has the focus. Ranges can also be used as toggles between two options for example on and off. The slider below has 5 values, 1 to 5 and the handle starts at 3. Try to
+            change the values. </p>
+          <fieldset class="exampleMarginLeft">
+            <label class="exampleMarginLeft" for="rangeVal">Slider Value 1 to 5</label>
+            <input type="range" max="5" min="1" onchange="document.getElementById('rangeValLabel').innerHTML = this.value;" step="1" name="rangeVal"
+              id="rangeVal" value="3" class="slider">
+            </input>
+            <p class="exampleMarginLeft">Output Value <span id="rangeValLabel" style="font-style: normal;">3</span></p>
+          </fieldset>
+        </div>
+        </section>
+
+        <section role="region" aria-labelledby="Validation">
+          <h2 class="headingTopPadding" id="Validation">Validation</h2>
+          <hr>
+          <p>Users make mistakes when inputting data. Forms have systems to check that the user has not put in any erroneous data. Typically when the user puts in incorrect data and then activates the submit button, instead of the data being
+            submitted to the website, the form highlights to the user what information is wrong. Below is an example with a text box that is designed for the user to put in an email address. If the email address does not contain an ‘@’ symbol, when
+            the submit button is activated, an error message will appear. Try entering an email address with and without and ‘@’ symbol. Note if the email address is valid the page will refresh and the focus will go to the top of the page.</p>
+          <form class="exampleMarginLeft" acion="forms.html">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="emailaddress">
+            <input type="submit" value="Submit" class="btn btn-dark" onclick="focusSet()">
+          </form>
+        </section>
+
+
+
+
+
+      </div>
+      <!--End of standardContents div which pushes text to peft-->
+
+
+
+
+
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

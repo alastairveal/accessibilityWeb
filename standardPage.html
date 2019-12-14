@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8"><!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+      <meta name="description" content="" /> <!--the description is the bit that google displays-->
+      <meta name="keywords" content="revision, html, css" /><!--makes the website easier to find for search engines-->
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet"><!--Google Fonts-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
+      <title>Accessibility Web Standard Content Page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+
+<div class="container-fluid">
+
+      <div class="sidenav" role="region" aria-labelledby="pageContents">
+        <h2 class="pageContents" id="pageContents">Page Contents</h2>
+        <a href="#topic1">TopicTopicTopic 1</a><br/>
+        <a href="#topic2">TopicTopicTopic 2</a><br/>
+      </div>
+
+      <main> <!--using main is a semantic div for screen readers-->
+        <div class="standardContents">
+          <h1 class="headingTopPadding" id="maincontent">Main Contents</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <section role="region" aria-labelledby="topic1">
+            <h2 class="headingTopPadding" id="topic1">Topic 1</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+          <section role="region" aria-labelledby="topic2">
+            <h2 class="headingTopPadding" id="topic2">Topic 2</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+</footer>
+
+<!--style="text-align: center-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

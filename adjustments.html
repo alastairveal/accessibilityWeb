@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8"><!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+      <meta name="description" content="Web pages can be adjusted by users in a number of ways to make them easier to access. Listed below are a number of in built tools and accessibility extensions that can be used to adjust websites to meet individual needs better. Difficulties users may encounter when adjusting websites are also discussed." /> <!--the description is the bit that google displays-->
+      <meta name="keywords" content="zoom, text size, responsive, extensions, add ons" /><!--makes the website easier to find for search engines-->
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet"><!--Google Fonts-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+      <link rel="stylesheet" type="text/css" href="styles/styles.css">
+      <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
+      <title>Accessibility Web Adjustments</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="forms.html">Forms</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+        </li>
+        <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+          <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+<div class="container-fluid">
+
+      <div class="sidenav" role="region" aria-labelledby="pageContents">
+        <h2 class="pageContents" id="pageContents">Page Contents</h2>
+        <a href="#zoom">Zoom</a><br/>
+        <a href="#textSize">Text Size</a><br/>
+        <a href="#responsive">Responsive Websites</a><br/>
+        <a href="#extension">Extensions</a>
+      </div>
+
+      <main> <!--using main is a semantic div for screen readers-->
+        <div class="standardContents">
+          <h1 class="headingTopPadding" id="maincontent">Adjustments</h1>
+          <p>Web pages can be adjusted by users in a number of ways to make them easier to access. Listed below are a number of in built tools and accessibility extensions that can be used to adjust websites to meet individual needs better. Difficulties users may encounter when adjusting websites are also discussed.</p>
+          <section role="region" aria-labelledby="zoom">
+            <h2 class="headingTopPadding" id="zoom">Zoom</h2>
+            <hr>
+            <p>Zooming in enlarges all of the content on the web page. In Windows, using Chrome, Firefox, Edge or Internet Explorer, press on the CTRL & + keys to zoom in and the CTRL & - keys to zoom out. On the Mac, using Safari press the COMMAND & + or - keys to change the zoom level. On badly designed websites, zooming in can cause some content to be lost. See section below on responsive websites.  </p>
+          </section>
+          <section role="region" aria-labelledby="textSize">
+            <h2 class="headingTopPadding" id="textSize">Text Size</h2>
+            <hr>
+            <p>The text size can be enlarged, without enlarging any of the other elements on the page. Sometimes this may provide a better user experience, if zooming in causes content to become difficult to read or navigate. Methods for changing the text size differ from browser to browser. Font sizes can be changed in the standard view in Chrome, Firefox, Internet Explorer and Safari. In Edge to change the font size, users need to change the view to Reading View. Reading View in Edge is not yet covered by AccessiblityWeb.</p>
+              <h3 class="exampleMarginLeft subcatTopMargin">Chrome Text Size</h3>
+              <p class="exampleMarginLeft">To change the text size in Chrome, go the more button (...) in the top right hand corner of the Chrome browser (or press and release the ALT key, then press the ENTER key), and choose settings from the menu. In the setting page, scroll or tab down to the appearance section and change the font size as needed in the font size drop down menu.</p>
+              <img class="exampleMarginLeft" src="images/ChromeFontSizeSettings.png" alt="showing how to adjust the text size in the Chrome browser, as described above." height="439px" width="1000px"/>
+              <h3 class="exampleMarginLeft subcatTopMargin">Firefox Text Size</h3>
+              <p class="exampleMarginLeft">
+                To change the font size in Firefox, go to the more button on the top right of the browser (a ‘hamburger’ button with three horizontal lines). Then select 'Options' from the menu that appears. Alternatively press and releasing the ALT key, then press the T key, and then the O key will open the options menu.  Use the TAB key or scroll down to get to the ‘Language and Appearance’ section and activate the ‘Advanced’ button, which opens the font window. In the font window, first uncheck the ‘Allow pages to choose their own fonts, instead of your selections above’. Then click or SHIFT & TAB up to the ‘Minimum font size’ drop down menu and select a desired minimum font size.
+              </p>
+              <img class="exampleMarginLeft" src="images/FireFoxFontSizeSettings.png" alt="showing how to adjust the text size in the Firefox browser, as described above." height="825px" width="1000px"/>
+              <h3 class="exampleMarginLeft subcatTopMargin">Internet Explorer Text Size</h3>
+              <p class="exampleMarginLeft">In Internet Explorer, to change the text size, first open the view menu by pressing the ALT + V key. Then either click on the ‘Text Size’ item or use the DOWN ARROW keys and press the ENTER key on ‘Text Size’. From there, click on the desired text size or navigate the text size options using the DOWN ARROW keys and press ENTER on the desired text size. </p>
+              <img class="exampleMarginLeft" src="images/IEFontSizeSettings.png" alt="showing how to adjust the text size in the Internet Explorer browser, as described above." height="422px" width="496px"/>
+
+              <h3 class="exampleMarginLeft subcatTopMargin">Safari Text Size</h3>
+              <p class="exampleMarginLeft">To change the minimum font size in Safari, click in the Safari menu at the top left of the screen, or open the Safari menu by pressing Fn CTRL F2 or CTRL F2. In the Safari menu, click on preferences, or use the DOWN ARROW keys to get to preferences and press ENTER. Click on the advanced tab, or use the TAB key to get to advanced and press the SPACE key. Then check the ‘Never use font sizes smaller than’ checkbox by clicking on the checkbox, or using the TAB key to get to the checkbox and pressing SPACE. Then in the drop down menu select a minimum font size, which can be done either by using the mouse, or using the TAB key to get to the drop down menu and using the UP & DOWN ARROW keys to change the value.</p>
+              <img class="exampleMarginLeft" src="images/SafariFontSizeSettings.png" alt="showing how to adjust the text size in the Safari browser, as described above." height="460px" width="1056px"/>
+          </section>
+
+
+
+          <section class="relativeSection" role="region" aria-labelledby="responsive">
+            <h2 class="headingTopPadding" id="responsive">Responsive Websites</h2>
+            <hr>
+            <p>When changing the zoom or text size, users may find that some content is lost, becomes unreadable or does not change in size as expected. A responsive website is a site where users can both change the text size and the content is still accessible, within certain limitations, regardless of the size of browser window (viewport) and the user's zoom and text size preferences. What this means in practice is that all of the content should remain visible regardless of the viewport or zoom and text settings. In addition, content should generally ‘reflow’ as the viewport gets narrower. The user should not have to scroll to the left or the right hand side of the page if the zoom settings have been changed. Ideally, elements that can be side by side on a wider viewport, will end up one above the other on a narrower viewport or when the zoom is changed. The AccessibilityWeb website, with a deliberate exception in a small section of this page, is designed to reflow. For example, as the page becomes narrower or is zoomed in, the menu at the top is replace by a button with a menu with the page headings, and the page contents section, used to aid navigation in the page, disappears. Unfortunately, not all websites are designed to reflow properly. In the grey box immediately beneath this paragraph is an example of bad design that does not respond well when the zoom is increased or the page size is narrowed.</p>
+            <div class="textNotResize exampleMarginLeft">
+              <p><strong>Text Not Resizing: </strong>In this section, only some of the text will change size when the user<span class="textFixedSize"> changes the font size (check section above to see how to change font size, not zoom).</span> </p>
+            </div>
+            <div class="overlapDiv exampleMarginLeft">
+              <p><strong>Overlapping and Overspilling: </strong>The text in this section will start to overlap other sections and content on the right hand side will not be visible as the zoom is increased. Press the CTRL & + keys on your browser or COMMAND & + keys if using Safari on Mac to zoom in and see what happens.</p>
+            </div>
+          </section>
+
+
+
+          <section role="region" aria-labelledby="extension">
+            <h2 class="headingTopPadding" id="extension">Extensions</h2>
+            <hr>
+            <p>An extension is a piece of software that can be added to the browser which means the browser can do more things. There are a range of accessibility extensions that can change how web pages are displayed as well as adding extra functionality, such as reading aloud the content. Below are some links to extensions for the Chrome, Firefox and Edge browsers. Please note that AccessiblityWeb takes no responsibility for any harm caused by installing these extensions. Installing any extensions listed in the links below is entirely at the user’s own risk.</p>
+            <a class="exampleMarginLeft" href="https://chrome.google.com/webstore/category/collection/accessibility">Chrome Extensions</a><br />
+            <a class="exampleMarginLeft" href="https://www.microsoft.com/en-gb/search/shop/apps?q=accessibility">Edge Extensions</a><br />
+            <a class="exampleMarginLeft" href="https://accessfirefox.org/Firefox_Accessibility_Extensions.php">Firefox Extensions</a><br />
+          </section>
+
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div class="container-fluid">
+      <p>© Copyright 2019 Accessibility Web</p>
+    </div>
+</footer>
+
+<!--style="text-align: center-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
