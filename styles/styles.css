@@ -28,19 +28,8 @@ h5{
   font-size: 1rem;
 }
 
-a {
-  color: #236AFF;
+.nav-link:hover { /*overrides the bootstrap to provide a link on hover on mouse over*/
   text-decoration: underline;
-}
-
-.nav-link:focus{ /*Overrides the bootstrap to ensure that underline stays with the link when link has focus*/
-  text-decoration: underline;
-}
-
-a:focus {
-  outline-style: solid;
-  outline-color: black;
-  outline-width: 2px;
 }
 
 .text-white:focus {
@@ -113,6 +102,12 @@ img{ /*this makes sure that the image scales to fit the view port but does not e
   outline-color: white;
   outline-width: 2px;
 }
+
+.paragraphText{ /*colors the text dark slate grey*/
+  color: #2F4F4F;
+}
+
+
 
 /*HOME PAGES*/
 .textCentre{
@@ -293,6 +288,10 @@ iframe{
 
 select{
   border-color: #8a8a5c;
+}
+
+.exampleRadio{
+  margin-right: 1rem;
 }
 
 /*WINDOW PAGE*/
