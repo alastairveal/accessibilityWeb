@@ -10,17 +10,21 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/home.css">
     <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
-    <title>Accessibility Web Home</title>
+    <title>Home - AccessiblityWeb</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
-      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
-      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <div role="banner">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+        <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      </div>
+
+        <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span  class="navbar-toggler-icon"></span>
+        </button>
+      <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><!--class Nav-item is a bootstrap class-->
           <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
@@ -47,8 +51,9 @@
           <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
         </li>
       </ul>
+
     </div>
-    </nav>
+  </div>
 
     <main>
       <div class="homeContents">
@@ -57,7 +62,7 @@
 
 
       <h1 class="contentPadding textCentre" id="maincontent">AccessibilityWeb - accessibility from the <em>user</em> perspective!</h1>
-      <p class="firstParaMargin">
+      <p class="paragraphText firstParaMargin">
         AccessibilityWeb is a site about web accessibility from the user point of view.  It provides explanations and examples of many of the things that disabled users and users of assistive technology might find confusing when using the web.  It is especially handy for screen reader users who want to understand what their screen reader is reading out. Topics include the building blocks of websites, focus order, images and videos, forms, how designers try and make sites more accessible and how users can adjust their own settings. AccessibilityWeb does not discuss how to use assistive technology or how to make sites more accessible.
       </p>
 
@@ -69,7 +74,7 @@
                 </div>
                 <div class="card-body">
                   <a href="elements.html"><img src="images/ElementsAndOrder.png" height="250px" width="300px" alt="elements"  /></a>
-                  <p>The parts a website is made of.</p>
+                  <p class="paragraphText">The parts a website is made of.</p>
                   <br/> <!--the br tag here ensures that there are four lines worth of space taken up to get even size of cards-->
               </div>
             </div>
@@ -82,7 +87,7 @@
               </div>
               <div class="card-body">
                 <a href="focus.html"><img src="images/Focus.png" height="250px" width="300px" alt="focus"  /></a>
-                <p>Moving between interactive elements without the mouse.</p>
+                <p class="paragraphText">Moving between interactive elements without the mouse.</p>
             </div>
           </div>
         </div>
@@ -94,7 +99,7 @@
               </div>
               <div class="card-body">
                 <a href="imagesandvideo.html"><img src="images/Image.png" height="250px" width="300px" alt="images and video"  /></a>
-                <p>Access issues with images and video content.</p>
+                <p class="paragraphText">Access issues with images and video content.</p>
               </div>
             </div>
           </div>
@@ -106,7 +111,7 @@
               </div>
               <div class="card-body">
                 <a href="forms.html"><img src="images/Form.png" height="250px" width="300px" alt="forms"  /></a>
-                <p>Inputting information into websites and accessibility.</p>
+                <p class="paragraphText">Inputting information into websites and accessibility.</p>
               </div>
             </div>
           </div>
@@ -120,7 +125,7 @@
             </div>
             <div class="card-body">
               <a href="windows.html"><img src="images/HTMLWindow.png" height="250px" width="300px" alt="windows"  /></a>
-              <p>The many different kinds of windows that can appear when browsing.</p>
+              <p class="paragraphText">The many different kinds of windows that can appear when browsing.</p>
           </div>
         </div>
       </div>
@@ -135,7 +140,7 @@
               </div>
               <div class="card-body">
                 <a href="accessibilityaids.html"><img src="images/EarAndNose.png" height="250px" width="300px" alt="accessibility aids"  /></a>
-                <p>Features added solely for the purpose of making websites more accessible.</p>
+                <p class="paragraphText">Features added solely for the purpose of making websites more accessible.</p>
               </div>
             </div>
           </div>
@@ -147,7 +152,7 @@
               </div>
               <div class="card-body">
                 <a href="adjustments.html"><img src="images/Adjustments.png" height="250px" width="300px" alt="adjustments.html"  /></a>
-                <p>Adjustments users can make improve accessibility using inbuilt tools.</p>
+                <p class="paragraphText">Adjustments users can make improve accessibility using inbuilt tools.</p>
 
 
               </div>
@@ -161,7 +166,7 @@
               </div>
               <div class="card-body">
                 <a href="about.html"><img src="images/About.png" height="250px" width="300px" alt="about"  /></a>
-                <p>About this site, accessibility statement and link to further information.</p>
+                <p class="paragraphText">About this site, accessibility statement and link to further information.</p>
               </div>
             </div>
           </div>
@@ -173,7 +178,7 @@
 
 <footer>
       <div class="container-fluid">
-    <p>© Copyright 2019 Accessibility Web</p>
+    <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
     </div>
 </footer>
 

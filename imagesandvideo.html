@@ -9,17 +9,21 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
       <link rel="stylesheet" type="text/css" href="styles/styles.css">
       <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
-      <title>Accessibility Web Standard Content Page</title>
+      <title>Images and Video - AccessiblityWeb</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
-      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
-      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <div role="banner">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+        <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      </div>
+
+        <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span  class="navbar-toggler-icon"></span>
+        </button>
+      <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><!--class Nav-item is a bootstrap class-->
           <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
@@ -46,59 +50,60 @@
           <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
         </li>
       </ul>
+
     </div>
-    </nav>
+  </div>
 
 
 <div class="container-fluid">
 
-  <div class="sidenav" role="region" aria-labelledby="pageContents">
+  <nav class="sidenav" aria-labelledby="pageContents">
     <h2 class="pageContents" id="pageContents">Page Contents</h2>
         <a href="#imagesAltText">Images & Alt Text</a><br/>
         <a href="#imageOnly">Image Only Text</a><br/>
         <a href="#videoPlayer">Video Players</a><br/>
         <a href="#audioDescription">Audio Description</a>
-      </div>
+      </nav>
 
       <main> <!--using main is a semantic div for screen readers-->
         <div class="standardContents" id="maincontent">
           <h1 class="headingTopPadding">Images & Video</h1>
-          <p>Images and video can be challenging for users with visual or hearing impairments. There are a number of accessibility features that can help.</p>
+          <p class="paragraphText">Images and video can be challenging for users with visual or hearing impairments. There are a number of accessibility features that can help.</p>
           <section role="region" aria-labelledby="imagesAltText">
-            <h2 class="headingTopPadding" id="imagesAltText">Images & Alt Text</h2>
+            <h2 class="headingTopPadding" id="imagesAltText" tabindex="-1">Images & Alt Text</h2>
             <hr>
-            <p>Images should have descriptions for users unable to see. Web designers can insert descriptions of images called alt text, which are read out loud by screening reading software. All well designed websites should have alt text for every image that contributes significantly to the page. If an image does not have alt text, screen reading software may either ignore the image, or identify that the element is an image by stating out loud the word 'Image'. The behaviour of the screen reading software when the image does not have alt text depends on the make of sofware and the settings. Sometimes, if an image is purely decorative and does not contribute to the information on the page, a web designer may try and hide the images from screen reading software.  Despite attempts of web designers to hide decorative images, these hidden images may or may not be spotted by screen reading software depending on the techniques the designers have used and the screen reading software of the user.</p>
-            <p>Below are three identical pictures of some apples. The first image has an alt text description, the second image has no alt text description, and the third image has been ‘hidden’ from screen reading software (but may still be identified as an image depending on the screen reading software used).</p>
+            <p class="paragraphText">Images should have descriptions for users unable to see. Web designers can insert descriptions of images called alt text, which are read out loud by screening reading software. All well designed websites should have alt text for every image that contributes significantly to the page. If an image does not have alt text, screen reading software may either ignore the image, or identify that the element is an image by stating out loud the word 'Image'. The behaviour of the screen reading software when the image does not have alt text depends on the make of sofware and the settings. Sometimes, if an image is purely decorative and does not contribute to the information on the page, a web designer may try and hide the images from screen reading software.  Despite attempts of web designers to hide decorative images, these hidden images may or may not be spotted by screen reading software depending on the techniques the designers have used and the screen reading software of the user.</p>
+            <p class="paragraphText">Below are three identical pictures of some apples. The first image has an alt text description, the second image has no alt text description, and the third image has been ‘hidden’ from screen reading software (but may still be identified as an image depending on the screen reading software used).</p>
 
             <div class="row">
               <div class="col-md-3 exampleMarginLeft bottomPad">
                 <img src="images/Apple.jpg" height="225px" class="appleImg" width="300px" alt="showing a red apple on a tree in the foreground and several more apples in the background"/>
-                <p>First image, image with alt text. The alt text that screen reader users hear is "showing a red apple on a tree in the foreground and several more apples in the background".</p>
+                <p class="paragraphText">First image, image with alt text. The alt text that screen reader users hear is "showing a red apple on a tree in the foreground and several more apples in the background".</p>
               </div>
               <div class="col-md-3 exampleMarginLeft bottomPad">
                 <img src="images/Apple.jpg" height="225px" class="appleImg" width="300px"/>
-                <p>Second image, image without alt text. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
+                <p class="paragraphText">Second image, image without alt text. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
               </div>
               <div class="col-md-3 exampleMarginLeft bottomPad">
                 <img src="images/Apple.jpg" alt="" class="appleImg" height="225px" width="300px"/>
-                <p>Third image, decorative image, deliberately 'hidden' from screen reading software. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
+                <p class="paragraphText">Third image, decorative image, deliberately 'hidden' from screen reading software. Screen reader users may not be aware that there is an image, or simply hear the word 'image'.</p>
               </div>
             </div>
           </section>
           <section role="region" aria-labelledby="imageOnly">
-            <h2 class="headingTopPadding" id="imageOnly">Image Only Text</h2>
+            <h2 class="headingTopPadding" id="imageOnly" tabindex="-1">Image Only Text</h2>
             <hr>
-            <p>Some images contain text within the image.  The image is an image of text. The text embedded in the image cannot be read out loud by screen reading software.  Ideally the image will have alt text, which will describe the text written on the image.  Below is an image, inside of which there is some text.</p>
+            <p class="paragraphText">Some images contain text within the image.  The image is an image of text. The text embedded in the image cannot be read out loud by screen reading software.  Ideally the image will have alt text, which will describe the text written on the image.  Below is an image, inside of which there is some text.</p>
               <img src="images/ImageText.jpg" height="250px" width="300px" alt="showing text in an image.  The backround is of clouds. The text in the image states, this is some text in an image, this text will not be read aloud by screen reading software." class="exampleMarginLeft"/>
           </section>
           <section role="region" aria-labelledby="VideoPlayer">
-            <h2 class="headingTopPadding" id="videoPlayer">Video Players</h2>
+            <h2 class="headingTopPadding" id="videoPlayer" tabindex="-1">Video Players</h2>
             <hr>
-            <p>There are many kinds of video players that are available which can be used in websites. Different video players will work slightly differently. This page uses one of the most common video players, the YouTube video player.  The video itself is hosted on the YouTube website, but plays inside the current page.</p>
+            <p class="paragraphText">There are many kinds of video players that are available which can be used in websites. Different video players will work slightly differently. This page uses one of the most common video players, the YouTube video player.  The video itself is hosted on the YouTube website, but plays inside the current page.</p>
             <h3 class="exampleMarginLeft">Example Video</h3>
             <iframe class="exampleMarginLeft bottomPad" width="878" height="490" src="https://www.youtube.com/embed/pQO4S1t2uiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video on JAWS software"></iframe>
-            <p>The YouTube video player can be accessed using the keyboard. The TAB key can be used to cycle forward through the controls and the SPACEBAR to activate. Therefore to play the video, press the TAB key until the play button is reached and press on SPACEBAR. Pressing on the RIGHT ARROW key on the keyboard will skip forward in the recording and pressing on the LEFT ARROW skips backwards.</p>
-            <p>The YouTube video player has the following controls and links.</p>
+            <p class="paragraphText">The YouTube video player can be accessed using the keyboard. The TAB key can be used to cycle forward through the controls and the SPACEBAR to activate. Therefore to play the video, press the TAB key until the play button is reached and press on SPACEBAR. Pressing on the RIGHT ARROW key on the keyboard will skip forward in the recording and pressing on the LEFT ARROW skips backwards.</p>
+            <p class="paragraphText">The YouTube video player has the following controls and links.</p>
             <ul>
               <li><b>Channel Link:</b> Link to the YouTube channel where the video came from.</li>
               <li><b>Video Link:</b> Link to the item on the YouTube website.</li>
@@ -113,12 +118,12 @@
               <li><b>Settings Menu Item: </b>Change the player settings.  Activating this control opens a sub menu with a number of settings controls.</li>
               <li><b>Full Screen Button: </b>Button to watch the video in full screen.</li>
             </ul>
-            <p>Not all of these controls are visible all the time. The time slider only appears when the video has started playing.  The list of more videos only appears when the video is paused or finished.</p>
+            <p class="paragraphText">Not all of these controls are visible all the time. The time slider only appears when the video has started playing.  The list of more videos only appears when the video is paused or finished.</p>
           </section>
           <section role="region" aria-labelledby="audioDescription">
-            <h2 class="headingTopPadding" id="audioDescription">Audio Description</h2>
+            <h2 class="headingTopPadding" id="audioDescription" tabindex="-1">Audio Description</h2>
             <hr>
-            <p>Audio description is a narration of the action in the video for visually impaired users.  Most videos will not have audio description.  Underneath is an example of a video with audio description.</p>
+            <p class="paragraphText">Audio description is a narration of the action in the video for visually impaired users.  Most videos will not have audio description.  Underneath is an example of a video with audio description.</p>
             <iframe class="exampleMarginLeft bottomPad" width="717" height="538" src="https://www.youtube.com/embed/Fa4kr9ohjBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video example with Audio Description"></iframe>
 
           </section>
@@ -129,7 +134,7 @@
 
 <footer>
     <div class="container-fluid">
-      <p>© Copyright 2019 Accessibility Web</p>
+      <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
     </div>
 </footer>
 

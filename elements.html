@@ -9,17 +9,21 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
       <link rel="stylesheet" type="text/css" href="styles/styles.css">
       <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
-      <title>Accessibility Web Elements and Tabs</title>
+      <title>Elements - AccessiblityWeb</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
-      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
-      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <div role="banner">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+        <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      </div>
+
+        <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span  class="navbar-toggler-icon"></span>
+        </button>
+      <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><!--class Nav-item is a bootstrap class-->
           <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
@@ -46,56 +50,57 @@
           <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
         </li>
       </ul>
+
     </div>
-    </nav>
+  </div>
 
 
 <div class="container-fluid">
 
-      <div class="sidenav" role="region" aria-labelledby="pageContents">
+      <nav class="sidenav" aria-labelledby="pageContents">
         <h2 class="pageContents" id="pageContents">Page Contents</h2>
         <a href="#paragraphs">Paragraphs</a><br/>
         <a href="#headings">Headings</a><br/>
         <a href="#links">Links</a><br/>
         <a href="#lists">Lists</a><br/>
         <a href="#tables">Tables</a><br/>
-      </div>
+      </nav>
 
       <main> <!--using main is a semantic div for screen readers-->
         <div class="standardContents">
           <h1 class="headingTopPadding" id="maincontent">Elements</h1>
-          <p>Web pages are made up of many different parts, which are called elements. Each of these elements have different properties and uses.  Think of a web page as a bit like a car. Parts such as wheels, tyres, an engine, a frame and windows, when put together form a car. The most common elements on a web page are paragraphs, headings (titles in a page), links, images, videos and form controls (elements where you can input data). Different kinds of elements are discussed below. For more detail on how to navigate and use interactive elements see the <a href="/focus.html">focus</a> and <a href="/forms.html">forms</a> pages.</p>
+          <p class="paragraphText">Web pages are made up of many different parts, which are called elements. Each of these elements have different properties and uses.  Think of a web page as a bit like a car. Parts such as wheels, tyres, an engine, a frame and windows, when put together form a car. The most common elements on a web page are paragraphs, headings (titles in a page), links, images, videos and form controls (elements where you can input data). Different kinds of elements are discussed below. For more detail on how to navigate and use interactive elements see the <a href="focus.html">focus</a> and <a href="forms.html">forms</a> pages.</p>
           <section role="region" aria-labelledby="paragraphs">
-            <h2 class="headingTopPadding" id="paragraphs">Paragraphs</h2>
+            <h2 class="headingTopPadding" id="paragraphs" tabindex="-1">Paragraphs</h2>
             <hr>
-            <p>A paragraph is one of the most basic and common elements on a web page and is simply a block of text. A paragraph may consist of a single word or a lengthy section of text. This text right here is an example of a paragraph.</p>
+            <p class="paragraphText">A paragraph is one of the most basic and common elements on a web page and is simply a block of text. A paragraph may consist of a single word or a lengthy section of text. This text right here is an example of a paragraph.</p>
           </section>
           <section role="region" aria-labelledby="headings">
-            <h2 class="headingTopPadding" id="headings">Headings</h2>
+            <h2 class="headingTopPadding" id="headings" tabindex="-1">Headings</h2>
             <hr>
-            <p>A heading is a kind of title within in a web page. There are six different levels of heading, heading level one to heading level 6. These levels are used to indicate the structure and hierarchy within a web page. Heading level one is the most important heading in a webpage and a well designed web page should only have a single heading level one. Heading level two is a sub topic of heading level one, a heading level three is a sub topic of a heading level two and so on. It is not possible to tell for certain just by looking at a heading which level it is, however each level of heading is usually larger then the next heading level down.</p>
+            <p class="paragraphText">A heading is a kind of title within in a web page. There are six different levels of heading, heading level one to heading level 6. These levels are used to indicate the structure and hierarchy within a web page. Heading level one is the most important heading in a webpage and a well designed web page should only have a single heading level one. Heading level two is a sub topic of heading level one, a heading level three is a sub topic of a heading level two and so on. It is not possible to tell for certain just by looking at a heading which level it is, however each level of heading is usually larger then the next heading level down.</p>
             <h1 class="exampleMarginLeft">Heading Level One Example</h1>
             <h2 class="exampleMarginLeft">Heading Level Two Example</h2>
             <h3 class="exampleMarginLeft">Heading Level Three Example</h3>
             <h4 class="exampleMarginLeft">Heading Level Four Example</h4>
             <h5 class="exampleMarginLeft">Heading Level Five Example</h5>
             <h6 class="exampleMarginLeft bottomPad">Heading Level Six Example</h6>
-            <p>Screen reading software will usually announce what level the heading is when reading out the page. To give an example, this web page has one heading level one called ‘Elements’, and five heading level twos called 'Paragraphs', 'Headings', 'Links', 'Lists' and 'Tables'. Note that the heading is different to the page title. The page title is displayed in the browser tabs bar above the page content, unlike a heading which is inside the page content. The page title appears on search engine results, and is used as the title of the page when it is added to favourites. The image below shows both the page title and the heading level one on this page.</p>
+            <p class="paragraphText">Screen reading software will usually announce what level the heading is when reading out the page. To give an example, this web page has one heading level one called ‘Elements’, and five heading level twos called 'Paragraphs', 'Headings', 'Links', 'Lists' and 'Tables'. Note that the heading is different to the page title. The page title is displayed in the browser tabs bar above the page content, unlike a heading which is inside the page content. The page title appears on search engine results, and is used as the title of the page when it is added to favourites. The image below shows both the page title and the heading level one on this page.</p>
             <img src="images/PageTitle.png" height="406px" width="1094px" alt="Showing the position of the page title and the heading level one in this page.  The page title is 'Accessibility Web Elements and Tab Order', the heading level one is 'Elements, Text Elements & Tab Order'" />
           </section>
           <section role="region" aria-labelledby="links">
-            <h2 class="headingTopPadding" id="links">Links</h2>
+            <h2 class="headingTopPadding" id="links" tabindex="-1">Links</h2>
             <hr>
-            <p>Links are connections to other web pages or parts of a web page. Clicking on the link or pressing the Enter key when the link has the <a href="#focus">focus</a> will activate the link. Links are normally coloured blue and underlined. Below are some examples of links, the first one takes the user to the home page of this site, the second to the top of this page.
+            <p class="paragraphText">Links are connections to other web pages or parts of a web page. Clicking on the link or pressing the Enter key when the link has the <a href="#focus">focus</a> will activate the link. Links are normally coloured blue and underlined. Below are some examples of links, the first one takes the user to the home page of this site, the second to the top of this page.
               There are more details on links in the <a href=windows.html>windows</a> page of this site.</p>
             <a href="index.html" class="exampleMarginLeft">AccessibilityWeb Home Page</a>
             <br /> <!--To make each link appear on a separate line-->
             <a href="#maincontent" class="exampleMarginLeft">Top of this Page</a>
           </section>
           <section role="region" aria-labelledby="lists">
-            <h2 class="headingTopPadding" id="lists">Lists</h2>
+            <h2 class="headingTopPadding" id="lists" tabindex="-1">Lists</h2>
             <hr>
-            <p>As the name suggests, a list is a set of information containing multiple items of information, a bit like a shopping list.  A list is an element in a website: a well-designed website will use the list element to create a list, as opposed to just stacking a number of very short paragraph elements on top of each other. A list is usually top to bottom, with each item on a separate line. Some pieces of screen reading software allow the user to navigate directly to and within lists on a page.  Lists can have numbering (ordered list), or no numbering (unordered list). A list can also have another list inside it, which is called a nested list.  Some screen reading software will announce when there is a nested list.  See the examples below to get a better understanding of lists. </p>
+            <p class="paragraphText">As the name suggests, a list is a set of information containing multiple items of information, a bit like a shopping list.  A list is an element in a website: a well-designed website will use the list element to create a list, as opposed to just stacking a number of very short paragraph elements on top of each other. A list is usually top to bottom, with each item on a separate line. Some pieces of screen reading software allow the user to navigate directly to and within lists on a page.  Lists can have numbering (ordered list), or no numbering (unordered list). A list can also have another list inside it, which is called a nested list.  Some screen reading software will announce when there is a nested list.  See the examples below to get a better understanding of lists. </p>
             <h3 class="exampleMarginLeft">Ordered List - Biggest Cities in the World</h3>
             <ol class="exampleList bottomPad">
               <li>Shanghai</li>
@@ -132,15 +137,15 @@
 
           </section>
           <section role="region" aria-labelledby="tables">
-            <h2 class="headingTopPadding" id="tables">Tables</h2>
+            <h2 class="headingTopPadding" id="tables" tabindex="-1">Tables</h2>
             <hr>
-            <p>A table is a an arrangement of rows and columns in a web page.  If properly designed, at the top of each column in the table there is a table header, which will describe the content of the column.  Below each table header there are table rows, containing information.  Underneath is an example of a table.</p>
+            <p class="paragraphText">A table is a an arrangement of rows and columns in a web page.  If properly designed, at the top of each column in the table there is a table header, which will describe the content of the column.  Below each table header there are table rows, containing information.  Underneath is an example of a table.</p>
             <h3 class="exampleMarginLeft">Table Example - Cities by Population in 2019</h3>
             <table class="exampleMarginLeft" border="1">
               <thead>
                 <tr>
-                  <th>City Name</th>
-                  <th>Population</th>
+                  <th scope="col">City Name</th>
+                  <th scope="col">Population</th>
                 </tr>
               </thead>
               <tbody>
@@ -175,7 +180,7 @@
 
 <footer>
     <div class="container-fluid">
-      <p>© Copyright 2019 Accessibility Web</p>
+      <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
     </div>
 </footer>
 

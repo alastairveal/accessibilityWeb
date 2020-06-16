@@ -39,18 +39,22 @@
   </script>
 
 
-  <title>Accessibility Web Standard Forms</title>
+  <title>Forms - AccessiblityWeb</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
-    <a class="skiptocontent" href="#maincontent">Skip to Content</a>
-    <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+    <div role="banner">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+    </div>
+
+      <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span  class="navbar-toggler-icon"></span>
+      </button>
+    <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><!--class Nav-item is a bootstrap class-->
         <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
@@ -77,13 +81,14 @@
         <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
       </li>
     </ul>
+
   </div>
-  </nav>
+</div>
 
 
   <div class="container-fluid">
 
-    <div class="sidenav" role="region" aria-labelledby="pageContents">
+    <nav class="sidenav" aria-labelledby="pageContents">
       <h2 class="pageContents" id="pageContents">Page Contents</h2>
       <a href="#textInput">Text Input</a><br/>
       <a href="#checkbox">Checkbox</a><br/>
@@ -93,18 +98,17 @@
       <a href="#datePicker">Date Picker</a><br/>
       <a href="#range">Range</a><br/>
       <a href="#validation">Validation</a>
-
-    </div>
+    </nav>
 
     <main>
       <!--using main is a semantic div for screen readers-->
       <div class="standardContents">
         <h1 class="headingTopPadding" id="maincontent">Forms</h1>
-        <p>A form on a web page allows the user to enter data. There are many kinds of form controls such as text boxes, comboboxes or buttons. Screen reading software will announce which kind of form control currently has the focus.</p>
+        <p class="paragraphText">A form on a web page allows the user to enter data. There are many kinds of form controls such as text boxes, comboboxes or buttons. Screen reading software will announce which kind of form control currently has the focus.</p>
         <section role="region" aria-labelledby="textInput">
           <h2 class="headingTopPadding" id="textInput">Text Input</h2>
           <hr>
-          <p>A text input is a box that the user can type in data, such as name or address. Below is an example with first name and last name. Screen reading software will announce when the user is in an edit area and can type in text. Sometimes some
+          <p class="paragraphText">A text input is a box that the user can type in data, such as name or address. Below is an example with first name and last name. Screen reading software will announce when the user is in an edit area and can type in text. Sometimes some
             edit areas automatically get the focus when the web page is opened (usually this is only used for search boxes).</p>
           <form>
             <label for="firstName" class="exampleMarginLeft">First Name: </label><input type="text" id="firstName" name="firstName" /><br>
@@ -112,32 +116,29 @@
           </form>
         </section>
         <section role="region" aria-labelledby="checkbox">
-          <h2 class="headingTopPadding" id="checkbox">Checkbox</h2>
+          <h2 class="headingTopPadding" id="checkbox" tabindex="-1">Checkbox</h2>
           <hr>
-          <p>A checkbox is a square box that can be ticked. It is used to select an option. When the checkbox has the focus, it can be checked and unchecked using the SPACEBAR key. The label for the checkbox normally appears after
+          <p class="paragraphText">A checkbox is a square box that can be ticked. It is used to select an option. When the checkbox has the focus, it can be checked and unchecked using the SPACEBAR key. The label for the checkbox normally appears after
             the checkbox (unlike most form controls where the label comes before the control).</p>
           <form>
             <input type="checkbox" name="exampleCheckbox" id="exampleCheckbox" class="exampleMarginLeft" /><label for="exampleCheckbox">Example Checkbox</label>
           </form>
         </section>
         <section role="region" aria-labelledby="radiobutton">
-          <h2 class="headingTopPadding" id="radiobutton">Radio Button</h2>
+          <h2 class="headingTopPadding" id="radiobutton" tabindex="-1">Radio Button</h2>
           <hr>
-          <p>A radio button is a small round control that can be selected. When the radio button has the focus, it can be selected and unselected using the SPACEBAR key, like the checkbox. Like the checkbox, the label for a radio button generally
-            comes after the button. It is usually used to enforce one choice from a set of choices, like in the example below. Once the radio button group set has the focus, use the UP and DOWN ARROW keys to get to the next option. Pressing the TAB
-            whilst a radio button has the focus will take the user to the next control, not the next option within the radio button set.</p>
-          <p class="exampleMarginLeft">Example: Please select your preferred contact method:</p>
+          <p class="paragraphText">A radio button is a small round control that can be selected. Radio buttons almost always deployed as a set of buttons. They are usually used to enforce one choice from a set of choices, like in the example below, where a user has the option of being contacted via post or email. As an interactive element, a radio button set can be navigated to using the TAB key. Once the radio button group set has the focus, use the UP and DOWN ARROW keys to get to the next option. Pressing the TAB whilst a radio button has the focus will take the user to the next control, not the next option within the radio button set. Moving between radio buttons using the ARROW keys, will select the option. In the example below, the option for ‘Post’ is before ‘Email’. By pressing the DOWN ARROW when ‘Post’ has the focus, the ‘Post’ option is unselected and the ‘Email’ option is selected. When the radio button set first receives the focus, all options may be unselected. If all options are unselected then, like a checkbox, the SPACEBAR key can be used to select the current option. In the example below, when the user navigates for the first time to the radio button set, the ‘Post’ option has the focus but neither ‘Post’ nor ‘Email’ are selected. To select 'Post' as the preferred option the user can press the SPACEBAR key.</p>
+          <p class="paragraphText exampleMarginLeft">Example: Please select your preferred contact method:</p>
           <form>
-            <input class="exampleMarginLeft" type="radio" name="exampleRadio" id="post"><label for="post">Post (Use DOWN ARROW key to get to the next option)</label><br />
-            <input class="exampleMarginLeft" type="radio" name="exampleRadio" id="email" /><label for="email">Email (Use UP ARROW key to get to the previous option)</label>
+            <input class="exampleMarginLeft exampleRadio" type="radio" name="exampleRadio" id="post"><label for="post">Post (Use DOWN ARROW key to get to the next option)</label><br />
+            <input class="exampleMarginLeft exampleRadio" type="radio" name="exampleRadio" id="email" /><label for="email">Email (Use UP ARROW key to get to the previous option)</label>
           </form>
 
         </section>
         <section role="region" aria-labelledby="dropDownMenu">
-          <h2 id="dropDownMenu" class="headingTopPadding">Drop Down Menu</h2>
-          </h2>
+          <h2 id="dropDownMenu" class="headingTopPadding" tabindex="-1">Drop Down Menu</h2>
           <hr>
-          <p>A combobox, otherwise known as a drop down menu, provides the user with a list of choices. Once the drop down menu has the focus, the UP and DOWN ARROW keys can be used to select each choice. Alternatively, if the likely first letter of
+          <p class="paragraphText">A combobox, otherwise known as a drop down menu, provides the user with a list of choices. Once the drop down menu has the focus, the UP and DOWN ARROW keys can be used to select each choice. Alternatively, if the likely first letter of
             a choice is known, press on the letter of that choice. For example, in a list of countries, press the 'T' key to get to Taiwan. If there are several options of the same name, press the first letter of that option until the desired option
             is located. For example to get to the 'United Kingdom in a list of countries press the 'U' key four times, as the United Kingdom is the fourth choice after Uganda, Ukraine and the United Arab Emirates.</p>
           <h3 class="exampleMarginLeft">Example List of Countries Select</h3>
@@ -391,14 +392,14 @@
         </section>
 
         <section role="region" aria-labelledby="button">
-        <h2 class="headingTopPadding" id="button">Button</h2>
+        <h2 class="headingTopPadding" id="button" tabindex="-1">Button</h2>
         <hr>
-        A button is used to submit data or perform an action on the page. When the button as the focus, the SPACEBAR or ENTER key can be used to activate the button. Some buttons may be disabled, and will only become active after some kind of user
-        activity (e.g. selecting a date).
+        <p class="paragraphText">A button is used to submit data or perform an action on the page. When the button as the focus, the SPACEBAR or ENTER key can be used to activate the button. Some buttons may be disabled, and will only become active after some kind of user
+        activity (e.g. selecting a date).</p>
         <div aria-live="assertive">
-          <p>Activate the example button below by clicking on it or pressing SPACEPAR.</p>
+          <p class="paragraphText exampleMarginLeft">Activate the example button below by clicking on it or pressing SPACEPAR.</p>
           <button type="button" id="exampleButton" class="exampleMarginLeft btn btn-dark" onclick="myFunction()">Submit</button>
-          <p id="outputContent"></p>
+          <p class="paragraphText" id="outputContent"></p>
         </div>
         <script>
           function myFunction() {
@@ -416,12 +417,12 @@
 
 
         <section role="region" aria-labelledby="datepicker">
-          <h2 class="headingTopPadding" id="datePicker">Date Picker</h2>
+          <h2 class="headingTopPadding" id="datePicker" tabindex="-1">Date Picker</h2>
           <hr>
-          <p>Many forms require users to input dates. This typically consists of an input box, which the user can type in the date that they want. To help users get the right dates, date input boxes often have a date picker tool. This is a calendar that
+          <p class="paragraphText">Many forms require users to input dates. This typically consists of an input box, which the user can type in the date that they want. To help users get the right dates, date input boxes often have a date picker tool. This is a calendar that
             appears to help the user find the right dates. There are many different kinds of date picker calendars, so there is no one simple way in which a user who cannot use a mouse can access them. The simplest way to use a date input box for non-mouse users is
             just to type in the date, in the format required. </p>
-          <p>Below is an example of a date input box with a date picker. As the user types in a date a calendar pops up. It is not necessary to use the popup calendar, users can just type in the date needed using the DD/MM/YYYY format (e.g. 1st of
+          <p class="paragraphText">Below is an example of a date input box with a date picker. As the user types in a date a calendar pops up. It is not necessary to use the popup calendar, users can just type in the date needed using the DD/MM/YYYY format (e.g. 1st of
             January 2019 would be 01/01/2019).</p>
           <form class="exampleMarginLeft" method="post">
             <div class="form-group">
@@ -436,9 +437,9 @@
         <div aria-live="assertive">
 
 
-          <h2 class="headingTopPadding" id="range">Range</h2>
+          <h2 class="headingTopPadding" id="range" tabindex="-1">Range</h2>
           <hr>
-          <p>A range, or slider, is a tool that lets the user choose from a number of different values. The range element is usually horizontal with a handle (bit that moves), and moving the handle to the left and right changes the value. For users who cannot use the
+          <p class="paragraphText">A range, or slider, is a tool that lets the user choose from a number of different values. The range element is usually horizontal with a handle (bit that moves), and moving the handle to the left and right changes the value. For users who cannot use the
             mouse, using the LEFT and RIGHT ARROW keys lets the use the change the values when the range has the focus. Ranges can also be used as toggles between two options for example on and off. The slider below has 5 values, 1 to 5 and the handle starts at 3. Try to
             change the values. </p>
           <fieldset class="exampleMarginLeft">
@@ -446,15 +447,15 @@
             <input type="range" max="5" min="1" onchange="document.getElementById('rangeValLabel').innerHTML = this.value;" step="1" name="rangeVal"
               id="rangeVal" value="3" class="slider">
             </input>
-            <p class="exampleMarginLeft">Output Value <span id="rangeValLabel" style="font-style: normal;">3</span></p>
+            <p class="paragraphText exampleMarginLeft">Output Value <span id="rangeValLabel" style="font-style: normal;">3</span></p>
           </fieldset>
         </div>
         </section>
 
         <section role="region" aria-labelledby="Validation">
-          <h2 class="headingTopPadding" id="Validation">Validation</h2>
+          <h2 class="headingTopPadding" id="Validation" tabindex="-1">Validation</h2>
           <hr>
-          <p>Users make mistakes when inputting data. Forms have systems to check that the user has not put in any erroneous data. Typically when the user puts in incorrect data and then activates the submit button, instead of the data being
+          <p class="paragraphText">Users make mistakes when inputting data. Forms have systems to check that the user has not put in any erroneous data. Typically when the user puts in incorrect data and then activates the submit button, instead of the data being
             submitted to the website, the form highlights to the user what information is wrong. Below is an example with a text box that is designed for the user to put in an email address. If the email address does not contain an ‘@’ symbol, when
             the submit button is activated, an error message will appear. Try entering an email address with and without and ‘@’ symbol. Note if the email address is valid the page will refresh and the focus will go to the top of the page.</p>
           <form class="exampleMarginLeft" acion="forms.html">
@@ -481,7 +482,7 @@
 
   <footer>
     <div class="container-fluid">
-      <p>© Copyright 2019 Accessibility Web</p>
+      <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
     </div>
   </footer>
 

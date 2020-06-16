@@ -9,18 +9,22 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
       <link rel="stylesheet" type="text/css" href="styles/styles.css">
       <link rel="icon" href="myFavicon.ico"/> <!--code to link to the favicon-->
-      <title>Accessibility Web Accessibility Aids</title>
+      <title>Accessibility Aids - AccessiblityWeb</title>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
-      <a class="skiptocontent" href="#maincontent" id="#skipToContentTop">Skip to Content</a><!--An ID was added here so the link to link to the skip to content as an example below works-->
-      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+      <div role="banner">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+        <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+      </div>
+
+        <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span  class="navbar-toggler-icon"></span>
+        </button>
+      <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><!--class Nav-item is a bootstrap class-->
           <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
@@ -47,27 +51,29 @@
           <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
         </li>
       </ul>
+
     </div>
-    </nav>
+  </div>
+
 
 <div class="container-fluid">
 
-      <div class="sidenav" role="region" aria-labelledby="pageContents">
-        <h2 class="pageContents" id="pageContents">Page Contents</h2>
+      <nav class="sidenav" aria-labelledby="pageContents">
+        <h2 class="pageContents" id="pageContents" tabindex="-1">Page Contents</h2>
         <a href="#hiddentext">Hidden Text</a><br/>
         <a href="#skiptocontent">Skip to Content</a><br/>
         <a href="#regionsandlandmarks">Regions and Landmarks</a>
 
-      </div>
+      </nav>
 
       <main> <!--using main is a semantic div for screen readers-->
         <div class="standardContents">
           <h1 class="headingTopPadding" id="maincontent">Accessibility Aids</h1>
-          <p>Web designers put a variety of aids into their websites to make them more accessible. To use an architectural analogy, builders put in facilities such as lifts and ramps to make buildings accessible for all. The sections below discuss some of these web accessibility features.</p>
+          <p class="paragraphText">Web designers put a variety of aids into their websites to make them more accessible. To use an architectural analogy, builders put in facilities such as lifts and ramps to make buildings accessible for all. The sections below discuss some of these web accessibility features.</p>
           <section role="region" aria-labelledby="hiddentext">
-            <h2 class="headingTopPadding" id="hiddentext">Hidden Text</h2>
+            <h2 class="headingTopPadding" id="hiddentext" tabindex="-1">Hidden Text</h2>
             <hr>
-            <p>Some text within a website is hidden to sighted users. This text can be read aloud by screen reading software. Usually this is to give the user a bit of extra information to explain the content. A good example of this is alt text, where a description is a appended to an image. Alt text is not visible on the web page itself, but is read aloud by screen reading software. There are many different techniques that web developers may use to add screen reader only readable text onto a page. Hidden text is often added to form controls to make it clearer what each control is and how to use it. A good example is a close button. Close buttons are often lablelled with the character 'X'. Having the character 'X' read aloud by screen reading software is not particularly meaningful, so instead of an 'X' the developer can add a hidden label which reads 'Close Button'. Below is an example of a modal (pop-up) window that opens when the user presses on the button. The close button is visible as an 'X', but read out loud by screen reading software as 'Close Button' </p>
+            <p class="paragraphText">Some text within a website is hidden to sighted users. This text can be read aloud by screen reading software. Usually this is to give the user a bit of extra information to explain the content. A good example of this is alt text, where a description is a appended to an image. Alt text is not visible on the web page itself, but is read aloud by screen reading software. There are many different techniques that web developers may use to add screen reader only readable text onto a page. Hidden text is often added to form controls to make it clearer what each control is and how to use it. A good example is a close button. Close buttons are often lablelled with the character 'X'. Having the character 'X' read aloud by screen reading software is not particularly meaningful, so instead of an 'X' the developer can add a hidden label which reads 'Close Button'. Below is an example of a modal (pop-up) window that opens when the user presses on the button. The close button is visible as an 'X', but read out loud by screen reading software as 'Close Button' </p>
             <button type="button" class="btn btn-dark exampleMarginLeft" data-toggle="modal" data-target="#exampleModal" aria-label="Launch Modal Opens in Overlay">
               Launch Modal
             </button>
@@ -83,7 +89,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <p>The button labelled as X in the top right will close this modal window. The X is described as 'Close Button' to screen reading software, not 'X'.</p>
+                    <p class="paragraphText">The button labelled as X in the top right will close this modal window. The X is described as 'Close Button' to screen reading software, not 'X'.</p>
                   </div>
                 </div>
               </div>
@@ -92,17 +98,17 @@
 
           </section>
           <section role="region" aria-labelledby="skiptocontent">
-            <h2 class="headingTopPadding" id="skiptocontent">Skip to Content</h2>
+            <h2 class="headingTopPadding" id="skiptocontent" tabindex="-1">Skip to Content</h2>
             <hr>
-            <p>Navigating within web pages is awkward for screen reader and screen magnifier users. Using the TAB key to cycle forward within a page can be time consuming, as it can take the user a considerable amount if time to find the content that they want. A ‘skip to content’ link is a handy way of moving from the beginning of the page, to the main content, bypassing any navigation links. A skip to content link is usually placed right at the beginning of the page, and activating the link usually takes the user to the first heading. Most skip to content links are hidden for aesthetic reasons, as the start of the page is where most websites have their logos. Skip to content links will still be read out loud by screen reading software, and appear when they receive the focus as the user presses the TAB key. This site has a skip to content link. Clicking on the 'Go to Skip to Content and press the TAB key' link below and pressing the TAB key will move the focus to the skip to content link at the very top of the page and make it visible.</p>
+            <p class="paragraphText">Navigating within web pages is awkward for screen reader and screen magnifier users. Using the TAB key to cycle forward within a page can be time consuming, as it can take the user a considerable amount if time to find the content that they want. A ‘skip to content’ link is a handy way of moving from the beginning of the page, to the main content, bypassing any navigation links. A skip to content link is usually placed right at the beginning of the page, and activating the link usually takes the user to the first heading. Most skip to content links are hidden for aesthetic reasons, as the start of the page is where most websites have their logos. Skip to content links will still be read out loud by screen reading software, and appear when they receive the focus as the user presses the TAB key. This site has a skip to content link. Clicking on the 'Go to Skip to Content and press the TAB key' link below and pressing the TAB key will move the focus to the skip to content link at the very top of the page and make it visible.</p>
             <a class="exampleMarginLeft" onmousedown="document.getElementById("skipToContentTop").style.top = "0px";" href="">Go to Skip to Content and press the TAB Key</a>
 
           </section>
           <section role="region" aria-labelledby="regionsandlandmarks">
-            <h2 class="headingTopPadding" id="regionsandlandmarks">Regions and Landmarks</h2>
+            <h2 class="headingTopPadding" id="regionsandlandmarks" tabindex="-1">Regions and Landmarks</h2>
             <hr>
-            <p>Web pages are divided into a number of zones. For example, at the top of a page there is usually a navigation area with links to other pages, in the middle there is usually the main section of the site, and at the bottom of the page there is a footer, which contains a few generic bits of information about the website. For sighted users, these zones are usually readily apparent through the formatting. For example, the navigation region is usually a different colour to the rest of the page. Web designers can also programmatically designate certain parts of the page as regions or landmarks. Some screen reading software will declare when the page is opened how many regions or landmarks there are, which is a useful aid to navigation. More importantly, screen reading software can be used to navigate between regions and landmarks using a shortcut key. The exact difference between regions and landmarks is quite technical and not really of much significance to most screen reader users. </p>
-            <p>There are some common generic landmarks that appear frequently on many pages. These are:</p>
+            <p class="paragraphText">Web pages are divided into a number of zones. For example, at the top of a page there is usually a navigation area with links to other pages, in the middle there is usually the main section of the site, and at the bottom of the page there is a footer, which contains a few generic bits of information about the website. For sighted users, these zones are usually readily apparent through the formatting. For example, the navigation region is usually a different colour to the rest of the page. Web designers can also programmatically designate certain parts of the page as regions or landmarks. Some screen reading software will declare when the page is opened how many regions or landmarks there are, which is a useful aid to navigation. More importantly, screen reading software can be used to navigate between regions and landmarks using a shortcut key. The exact difference between regions and landmarks is quite technical and not really of much significance to most screen reader users. </p>
+            <p class="paragraphText">There are some common generic landmarks that appear frequently on many pages. These are:</p>
             <ul>
               <li><strong>Banner:</strong> The banner is the area at the top of the page, which often contains the site logo.</li>
               <li><strong>Navigation:</strong> Navigation is the section of the page that contains a set of links, usually to other pages within the same site.</li>
@@ -110,15 +116,15 @@
               <li><strong>Contentinfo:</strong> The contentinfo, which is usually the footer at the bottom of the page, provides the user with some generic information about the website, such as copyright or contact details.</li>
             </ul>
 
-            <p>In addition to these landmarks, pages sometimes have page specific regions, that indicate that certain parts of the page have a particular piece of content or function.</p>
-            <p>This page is split into seven landmarks and regions. These are navigation, page contents, main, hidden text, skip to content, regions and landmarks and contentinfo (the footer). Screen reader users can use the assigned short cut key in their screen reading software to navigate between sections.</p>
+            <p class="paragraphText">In addition to these landmarks, pages sometimes have page specific regions, that indicate that certain parts of the page have a particular piece of content or function.</p>
+            <p class="paragraphText">This page is split into seven landmarks and regions. These are navigation, page contents, main, hidden text, skip to content, regions and landmarks and contentinfo (the footer). Screen reader users can use the assigned short cut key in their screen reading software to navigate between sections.</p>
     </main>
 
 </div>
 
 <footer>
     <div class="container-fluid">
-      <p>© Copyright 2019 Accessibility Web</p>
+      <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
     </div>
 </footer>
 
