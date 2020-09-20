@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!--tells the browser that all the information is encoded using the utf8 coding system which includes all international sysmbols-->
+  <meta name="description" content="A form on a web page allows the user to enter data. There are many kinds of form controls such as text boxes, comboboxes or buttons. Screen reading software will announce which kind of form control currently has the focus." />
+  <!--the description is the bit that google displays-->
+  <meta name="keywords" content="text box, combobox, checkbox, button, drop down menu, date picker, range, validation, slider" />
+  <!--makes the website easier to find for search engines-->
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet">
+  <!--Google Fonts-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Link to the bootstrap cdn.  Don't forget you also need the javascript bootstrap-->
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="icon" href="myFavicon.ico" />
+  <!--code to link to the favicon-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+  <!-- Bootstrap Date-Picker Plugin -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="styles/date.css">
+
+
+
+
+
+  <!--Forms and Validation Script-->
+  <script src="fma_t3.js"></script>
+
+  <!--Date Picker Script-->
+  <script>
+    $(document).ready(function() {
+      var date_input = $('input[name="date"]'); //our date input has the name "date"
+      var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+      var options = {
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+  </script>
+
+  <!--Mega Menu Script-->
+
+  <title>Widgets - AccessiblityWeb</title>
+</head>
+
+<body>
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+    <div role="banner">
+
+
+      <a class="skiptocontent" href="#maincontent">Skip to Content</a>
+      <a class="navbar-brand mainlogo" href="index.html">AccessibilityWeb</a>
+    </div>
+
+      <button role="navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span  class="navbar-toggler-icon"></span>
+      </button>
+    <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="elements.html">Elements</a><!--text white colors text as white-->
+      </li>
+      <li class="nav-item"><!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="focus.html">Focus</a><!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="imagesandvideo.html">Images & Video</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="widgets.html">Widgets</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="windows.html">Windows</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="adjustments.html">Adjustments</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="accessibilityaids.html">Aids</a> <!--text white colors text as white-->
+      </li>
+      <li class="nav-item"> <!--class Nav-item is a bootstrap class-->
+        <a class="nav-link text-white" href="about.html">About</a> <!--text white colors text as white-->
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+
+  <div class="container-fluid">
+
+    <nav class="sidenav" aria-labelledby="pageContents">
+      <h2 class="pageContents" id="pageContents">Page Contents</h2>
+      <a href="#formsAndValidation">Forms and Validation</a><br/>
+      <a href="#megaMenu">Mega Menu</a><br/>
+      <a href="#tooltip">Tooltip</a><br/>
+      <a href="#carousel">Carousel</a><br/>
+      <a href="#tabPanel">Tab Panel</a><br/>
+      <a href="#datePicker">Date Picker</a><br/>
+    </nav>
+
+    <main>
+      <!--using main is a semantic div for screen readers-->
+      <div class="standardContents">
+        <h1 class="headingTopPadding" id="maincontent">Widgets</h1>
+        <p class="paragraphText">A widget is a part of a page that enables the user to perform a function.  Widgets are typically made up of a set of elements that are bunched together.  Examples of widgets include forms where users can enter data, navigation menus or search boxes.  This page contains examples of a variety of different widgets.</p>
+
+        <section role="region" aria-labelledby="formsAndValidation">
+      		<h2 class="headingTopPadding" id="formsAndValidation">Forms and Validation</h2>
+          <hr />
+          <p>A form allows the user to enter data which is usually sent to a server for processing. Forms usually consist of a combination of text boxes, radio buttons, checkboxes and drop down menus. Each part of the form where a user edits data is known as a field. Forms often have submit buttons, so when the user has entered all the data that they wish to, data is sent to the server by pressing the submit button.</p>
+          <h3>Form Validation</h3>
+          <p>Most forms have some kind of validation. Users make mistakes when inputting data. Forms have systems to check that the user has not put in any erroneous data. Typically when the user puts in incorrect data and then activates the submit button, instead of the data being submitted to the website, the form highlights to the user what information is wrong. By convention, fields which are required often indicated by the asterisk character '*', usually read by screen reading software as 'star'.</p>
+          <h3>Forms and Aria</h3>
+          <p>Some forms, when coded well, announce extra information to screen reader users which is not visible to sighted users. The technology to do this is known as 'Aria'. Examples of Aria include:</p>
+          <ul>
+            <li><strong>Aria Invalid: </strong>Annouces whether or not the data entered into a field is invalid. Screen reader announces 'invalid entry' when data in the field is invalid field has the focus (e.g. an email address with no '@' symbol.). There is no announcement when the data is correct.</li>
+            <li><strong>Aria Required: </strong>Annouces whether or not a field is required. Screen reader announces 'required' after the label is read when the field has the focus. </li>
+          </ul>
+
+
+          <h3>Form Example</h3>
+          <p>The example form below includes a text box for an email address and two fields for a password. This is typical of the kind of form used when signing up for a service. There are a number of criteria that must be met before the submitted data will be accepted. The email address must be a valid email address. The password must be at least 8 characters long, contain at least one number and one capital letter. The two passwords must match. The email address and both the password fields must be filled in. If any of fields are not filled in, or are filled in incorrectly, an error message will appear next to each field where there is a mistake. These error messages are announced to screen reader users as they appear. The error message will appear when the user presses the ‘Submit’ button. Try filling out the form incorrectly and correctly and seeing the results. Note that no actual data is stored by AccessibilityWeb.</p>
+
+      		<h3  class="exampleMarginLeft">Register for Service</h3>
+      		<p class="exampleMarginLeft">Required field are marked with '*'.</p>
+      		 <div id="formcontainer">
+      			<form id="regsiterdetails" action="fma_t3confirm.html">
+      				<div>
+      					<label class="exampleMarginLeft" for="username">Username (Must be a valid email address) *</label></br>
+      					<input type="text" id="username" aria-required="true"></br><!--describing by the username error-->
+                <span id="usernameerror" class="error exampleMarginLeft"></span></br> <!--span to contain thsername error-->
+      				</div>
+      				<div>
+      					<label class="exampleMarginLeft" for="password">Password (Must be 8 characters and include one uppercase, one lowercase and one numeric) *</label></br>
+      					<input type="password" id="password" aria-required="true">
+      					<input type="checkbox" id="showpasswords">
+      					<label id="showpasswordslabel" for="showpasswords">Show Passwords</label></br>
+                <span id="passworderror" class="error exampleMarginLeft"></span></br>
+                </div>
+      				<div>
+      					<label class="exampleMarginLeft" for="retypedpassword">Retype your Password *</label></br>
+      					<input type="password" id="retypedpassword" aria-required="true"></br>
+      					<span id="passwordmatcherror" class="error exampleMarginLeft"></span></br>
+      				</div>
+      				<div>
+      					<button type="submit" id="registerButton" class="exampleMarginLeft btn btn-dark">Register</button>
+                <span id="success" class="success exampleMarginLeft" aria-live="polite"></span>
+      				</div>
+      			</form>
+      		</div>
+
+      	</section>
+
+
+        <section role="region" aria-labelledby="megaMenu">
+          <h2 class="headingTopPadding" id="megaMenu" tabindex="-1">Mega Menu</h2>
+          <hr>
+          <p>
+            A mega menu is a common feature on many websites.  A mega menu is a navigation menu that helps the user find content within a website.  Mega menus are created in a variety of different ways and some are not well designed with regards to accessibility.  A mega menu consist of a top link and a set of ‘sub links’.  When the top link is activated, a set of ‘sub links’ appear.  The top link describes a general overall topic and the ‘sub links’, are links to a more specific part of the web page.  For example, on a bank website, the top link may be ‘accounts’ and the ‘sub links’ may consist of ‘current accounts’, ‘savings accounts’ and ‘ISAs’.  The list of 'sub links' can usually be closed by clicking on the top link again which opened the list of links.
+          </p>
+          <p>A well-designed mega menu uses something called ‘Aria Expanded’.  When Aria Expanded is used, the state of the menu, either collapsed or expanded, is announced to screen reader users.  Therefore, when navigating near the top of the page, if a screen reader hears the word ‘collapsed’ after a link, it is a strong indication to suggest that that link is a mega menu, and activating that link will open a list of further more specific links.
+          The example mega menu here consists of a top link ‘Elements’, referring to the elements page on this website.  When the link is activated, a list of links appears which takes the user to specific parts of the Elements web page (for example ‘Paragraphs’ or ‘Headings’).  Press the TAB key, once the list of links has been opened, to get to the list of links from the ‘Elements’ link.  Activating the ‘Elements’ link once more closes the list of links.  The state of the list of links, (collapsed or expanded) is announce when the focus is placed on the ‘Elements’ link.
+          </p>
+
+
+          <div class="megaMenuTopContainer exampleMarginLeft">
+            <a id="menuTop" aria-expanded="false" href="#menuTop" class="megaMenuTopLink exampleMarginLeft">Elements</a>
+            <br />
+          </div>
+          <ul style="list-style-type:none;" id="subMenu" class="megaMenuOverall hidden exampleMarginLeft"> <!--list style type = none gets rid of the bullets.  Didn't seem to work when I tried with css-->
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html">Overview</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#paragraphs">Paragraphs</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#headings">Headings</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#links">Links</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#lists">Lists</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#tables">Tables</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#textInput">Text Input</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#checkbox">Checkbox</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#radiobutton">Radio Button</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#dropDownMenu">Drop Down Menu</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#button">Buttons</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#range">Range</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="headingTopPadding" id="tooltip" tabindex="-1">Tooltip</h2>
+          <hr>
+          <p>A tooltip is a textbox that appears when the user moves the mouse over an element, or when the element has the focus.  It provides useful extra information about the element.  The tooltip disappears when the mouse or focus is moved away from the element.  If properly designed, the content of the tooltip is read aloud to screen reader users.  Sometimes the tooltip can obscure other items on the page from view.  For this reason, a well designed tooltip can also be closed by pressing the ESCAPE key on the keyboard.  The example below has an email edit box, where a tooltip appears when the mouse is over the edit box or the focus is on the edit box. </p>
+          <label class="exampleMarginLeft" for="email">Email</label>
+          <input type="text" id="email" aria-required="true" aria-describedby="tooltipContent" class="tooltipExample" >
+          <span class="hidden" id="tooltipContent" role="tooltip" class="tooltipContent"><p class="tooltipContent">Please enter a valid email address</p></span>
+        </section>
+
+
+
+        <section role="region" aria-labelledby="carousel">
+          <h2 class="headingTopPadding" id="carousel" tabindex="-1">Carousel</h2>
+          <hr>
+          <p class="paragraphText">
+            Carousels are widgets which can be used to squeeze more information visually on a web page.  They can be tricky to use for disabled users.  A carousel usually has a timer as well as next and previous buttons.  Starting the timer makes the content in the carousel change on a regular basis.  The carousel is the whole widget including the controls, and the slide is the bit of information that changes.  Many carousels start rotating content as soon as the page is loaded, which can be distracting and disorientating.</p>
+            <p> Below is an example of a carousel on a timer.  The content changes every 3 seconds once the play button is started.  In the carousel there are three different slides, with a picture of the following three dishes; frittata, pizza and quiche.  When one of the dishes is visible, the other slides cannot be seen or read out but a screen reader.
+            <div class="exampleMarginLeft" aria-roledescription="carousel" aria-live="polite">
+                <img role="button" class="carouselButton" src="images/Previous.png" aria-label="previous" height="40" width="40" id="previousButton" tabindex="0"></img>
+                <img role="button" class="carouselButton" src="images/Play.png" aria-label="play" height="40" width="40" id="playPauseButton" tabindex="0"></img>
+                <img role="button" class="carouselButton" src="images/Pause.png" aria-label="pause" height="40" width="40" id="pauseButton" tabindex="0"></img>
+                <img role="button" class="carouselButton" src="images/Next.png" aria-label="next" height="40" width="40" id="nextButton" tabindex="0"></img>
+        			  <div id="slideContainer" aria-roledescription="slide" aria-label="1 of 1">
+                  <img  src="images/Frittata_Resized.jpg" height="485" width="600" alt="Frittata" id="carouselImage" id="carouselImage">
+                  <p id="carouselText">
+                  Frittata
+                </p>
+              </div>
+          </div>
+
+          </p>
+        </section>
+
+
+        <section role="region" aria-labelledby="tabPanel">
+          <h2 class="headingTopPadding" id="tabPanel" tabindex="-1">Tab Panel</h2>
+          <hr>
+          <p>
+            A tab panel, like a carousel, is a way squeezing more content visually on a page.  A tab panel consists of three parts.
+          </p>
+          <ul>
+            <li><strong>Tab Panel:</strong>  The main area of the tab that contains the content.  Only one tab panel is visible and screen reader accessible at one time.  </li>
+            <li><strong>Tab:</strong> This is the title of the tab panel.  For example a tab panel describing a pizza, would have a tab that reads ‘Pizza’.  Note this is different to the TAB key.</li>
+            <li><strong>Tab List:</strong> The tab list is a list of all the tabs.</li>
+          </ul>
+          <p>
+            Activating the tab (bit at the top), by clicking on the tab or by navigating to the tab using the TAB key or ARROW keys reveals the content of the tab in the tab panel.  Only the content in the active tab panel can be seen or read out loud by a screen reader.</p>
+          </p>
+          <p>
+            For keyboard only users, to change the selected tab, use the TAB key to enter the tab list.  Once in the tab list, use the LEFT and RIGHT ARROW keys to move to the next tab.  For screen reader users, the total number of tabs in the tab list should be announced when entering the tab list.  To move out of the tab list and get to the content in the tab panel, press the TAB key.  To move back to the tab list from the tab panel, press the SHIFT key and TAB key.
+          </p>
+          <p>
+            The following example has three tab panels describing different dishes; frittata, pizza and quiche.
+          </p>
+          <div class="exampleMarginLeft">
+
+          <div id="TabTop" role="tablist">
+          <div class="Tab" id="Frittata" role="tab" tabindex="0"><strong>Frittata</strong></div>
+            <div class="Tab" id="Pizza" role="tab"><strong>Pizza</strong></div>
+            <div class="Tab" id="Quiche" role="tab"><strong>Quiche</strong></div>
+          </div>
+            <div class="TabContainer" role="tabpanel" id="TabMain" tabindex="0">
+              <img src="images/Frittata_Resized.jpg" height="242" width="300" alt="Frittata" id="TabImage">
+              <span class="carouselText" id="TabText">
+              Frittata is an Italian dish similar to an omlette or quiche.  It is egg based and contains potatoes and does not have a crust.
+              </span>
+            </div>
+          </div>
+       </section>
+
+
+        <section role="region" aria-labelledby="datepicker">
+          <h2 class="headingTopPadding" id="datePicker" tabindex="-1">Date Picker</h2>
+          <hr>
+          <p class="paragraphText">Many forms require users to input dates. This typically consists of an input box, which the user can type in the date that they want. To help users get the right dates, date input boxes often have a date picker tool. This is a calendar that
+            appears to help the user find the right dates. There are many different kinds of date picker calendars, so there is no one simple way in which a user who cannot use a mouse can access them. The simplest way to use a date input box for non-mouse users is
+            just to type in the date, in the format required. </p>
+          <p class="paragraphText">Below is an example of a date input box with a date picker. As the user types in a date a calendar pops up. It is not necessary to use the popup calendar, users can just type in the date needed using the DD/MM/YYYY format (e.g. 1st of
+            January 2019 would be 01/01/2019).</p>
+          <form class="exampleMarginLeft" method="post">
+            <div class="form-group">
+
+
+
+
+              <label for="date">Date</label><input id="date" autocomplete="off" name="date" placeholder="DD/MM/YYYY" type="text" />
+            </div>
+          </form>
+
+        </section>
+
+
+
+
+      </div>
+
+      <!--End of standardContents div which pushes text to peft-->
+
+
+
+
+
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="container-fluid">
+      <p class="paragraphText">© Copyright 2019 Accessibility Web</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>
