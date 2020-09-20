@@ -253,7 +253,7 @@ iframe{
   margin-top: 1rem;
 }
 
-/*FORMS*/
+/*WIDGETS*/
 #exampleCheckbox{ /*Puts a space beween the checkbox and the text.  exampleCheckbox ID already exists for an explicit label*/
   margin-right: 1rem;
 }
@@ -294,11 +294,183 @@ select{
   margin-right: 1rem;
 }
 
+
+
+#showpasswordslabel {
+	display:inline;
+}
+
+#showpasswords {
+	width: 18px;
+    height: 18px;
+}
+
+.error {
+	width:15%;
+	min-width: 240px;
+	display: block;
+	padding: 0.5rem;
+    font-size: 0.75rem;
+	color: white;
+	background-color: #900;
+	border: 2px solid transparent;
+  margin-top: 5px;
+}
+
+.success {
+	width:15%;
+	min-width: 240px;
+	display: block;
+	padding: 0.5rem;
+    font-size: 0.75rem;
+	color: white;
+	margin: 0.5rem;
+	border: 2px solid transparent;
+
+}
+
+.exampleFormLabel {
+	display: block;
+	font-weight: bold;
+	margin: 0.25rem 0 0.25rem 0;
+}
+
+
+.megaMenuTopLink {
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right:10px;
+}
+
+.megaMenuOverall{
+  display: inline-block;
+  position: absolute;
+  left: -8px;
+}
+
+.megaMenuTopContainer{
+  padding-bottom: 8px; /*means that the mega menu sub menu appears below*/
+}
+
+.megaMenuSubMenu{
+  background-color:	#606060;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.tooltipContent {
+  background-color: black;
+  color: white;
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+#carouselText{
+  position: relative;
+  bottom: 100px;
+  left: 50px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #343A40;
+  border-color: black;
+  border-style: solid;
+  width: 120px;
+  text-align: center;
+}
+
+
+#carouselImage{
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-color: black;
+  border-width:3px;
+
+}
+
+
+.carouselButton {
+  cursor: pointer;
+  position: relative;
+  top: 45px;
+  left: 5px;
+
+
+}
+
+.Tab{
+  border-top-style: solid;
+  border-right-style: solid;
+  height: 40px;
+  width: 100px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.carouselText{
+  color: white;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  background-color: #343A40;
+  width: 300px;
+}
+
+
+#Frittata{
+ border-left-style: solid;
+}
+#Pizza{
+  left: 100px;
+  bottom: 40px;
+  border-bottom-style: solid;
+}
+#Quiche{
+  left: 200px;
+  bottom: 80px;
+  border-bottom-style: solid;
+}
+
+.TabContainer{
+  width:300px;
+  border-bottom-style: solid;
+  position: relative;
+  bottom: 80px;
+
+}
+
+#TabImage{
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+
+
+
 /*WINDOW PAGE*/
 
 
 /*ADJUSTMENT PAGE*/
-.subcatTopMargin{
+
+
+.h3TopMargin{
   margin-top: 2rem;
 }
 
