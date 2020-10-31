@@ -45,13 +45,12 @@
     })
   </script>
 
-  <!--Mega Menu Script-->
 
   <title>Widgets - AccessiblityWeb</title>
 </head>
 
 <body>
-  <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+  <div class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
     <div role="banner">
 
 
@@ -167,27 +166,22 @@
             A mega menu is a common feature on many websites.  A mega menu is a navigation menu that helps the user find content within a website.  Mega menus are created in a variety of different ways and some are not well designed with regards to accessibility.  A mega menu consist of a top link and a set of ‘sub links’.  When the top link is activated, a set of ‘sub links’ appear.  The top link describes a general overall topic and the ‘sub links’, are links to a more specific part of the web page.  For example, on a bank website, the top link may be ‘accounts’ and the ‘sub links’ may consist of ‘current accounts’, ‘savings accounts’ and ‘ISAs’.  The list of 'sub links' can usually be closed by clicking on the top link again which opened the list of links.
           </p>
           <p>A well-designed mega menu uses something called ‘Aria Expanded’.  When Aria Expanded is used, the state of the menu, either collapsed or expanded, is announced to screen reader users.  Therefore, when navigating near the top of the page, if a screen reader hears the word ‘collapsed’ after a link, it is a strong indication to suggest that that link is a mega menu, and activating that link will open a list of further more specific links.
-          The example mega menu here consists of a top link ‘Elements’, referring to the elements page on this website.  When the link is activated, a list of links appears which takes the user to specific parts of the Elements web page (for example ‘Paragraphs’ or ‘Headings’).  Press the TAB key, once the list of links has been opened, to get to the list of links from the ‘Elements’ link.  Activating the ‘Elements’ link once more closes the list of links.  The state of the list of links, (collapsed or expanded) is announce when the focus is placed on the ‘Elements’ link.
+          The example mega menu here consists of a top link ‘Widgets’, referring to the contents on this page.  When the link is activated, a list of links appears which takes the user to specific parts of the Widgets web page (for example ‘Tooltip’ or ‘Carousel’).  Press the TAB key, once the list of links has been opened, to navigate down the links.  Activating the ‘Widgets’ link once more closes the list of links.  The state of the list of links, (collapsed or expanded) is announce to screen reader users when the focus is placed on the ‘Widgets’ link.
           </p>
 
 
           <div class="megaMenuTopContainer exampleMarginLeft">
-            <a id="menuTop" aria-expanded="false" href="#menuTop" class="megaMenuTopLink exampleMarginLeft">Elements</a>
+            <a id="menuTop" aria-expanded="false" class="megaMenuTopLink exampleMarginLeft" style="color:white;"  onMouseOver="this.style.textDecoration='underline'"
+   onMouseOut="this.style.textDecoration='none'">Widgets</a><!--For some bizarre reason colour and hover underline will not work here with CSS.  Used inline styles and inline JavaScript to achieve results-->
             <br />
           </div>
           <ul style="list-style-type:none;" id="subMenu" class="megaMenuOverall hidden exampleMarginLeft"> <!--list style type = none gets rid of the bullets.  Didn't seem to work when I tried with css-->
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html">Overview</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#paragraphs">Paragraphs</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#headings">Headings</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#links">Links</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#lists">Lists</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#tables">Tables</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#textInput">Text Input</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#checkbox">Checkbox</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#radiobutton">Radio Button</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#dropDownMenu">Drop Down Menu</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#button">Buttons</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html#range">Range</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#formsAndValidation">Forms and Validation</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#megaMenu">Mega Menu</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#tooltip">Tooltip</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#carousel">Carousel</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#tabPanel">Tab Panel</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#datePicker">Date Picker</a></li>
           </ul>
         </section>
         <section>
@@ -251,7 +245,7 @@
             <div class="Tab" id="Pizza" role="tab"><strong>Pizza</strong></div>
             <div class="Tab" id="Quiche" role="tab"><strong>Quiche</strong></div>
           </div>
-            <div class="TabContainer" role="tabpanel" id="TabMain" tabindex="0">
+            <div class="TabContainer tabPanelBottomPadding" role="tabpanel" id="TabMain" tabindex="0">
               <img src="images/Frittata_Resized.jpg" height="242" width="300" alt="Frittata" id="TabImage">
               <span class="carouselText" id="TabText">
               Frittata is an Italian dish similar to an omlette or quiche.  It is egg based and contains potatoes and does not have a crust.
