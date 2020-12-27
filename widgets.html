@@ -45,12 +45,13 @@
     })
   </script>
 
+  <!--Mega Menu Script-->
 
   <title>Widgets - AccessiblityWeb</title>
 </head>
 
 <body>
-  <div class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!--THis div contains both the banner and the main nav.  They need to be contained in one container so the formatting which is chared by both divs works.  class Navbar is a bootstrap class.  Expand lg means navbar horizontal when screen is large.  fixed top fixes the navbar to the top-->
     <div role="banner">
 
 
@@ -163,26 +164,31 @@
           <h2 class="headingTopPadding" id="megaMenu" tabindex="-1">Mega Menu</h2>
           <hr>
           <p>
-            A mega menu is a common feature on many websites.  A mega menu is a navigation menu that helps the user find content within a website.  Mega menus are created in a variety of different ways and some are not well designed with regards to accessibility.  A mega menu consist of a top link and a set of ‘sub links’.  When the top link is activated, a set of ‘sub links’ appear.  The top link describes a general overall topic and the ‘sub links’, are links to a more specific part of the web page.  For example, on a bank website, the top link may be ‘accounts’ and the ‘sub links’ may consist of ‘current accounts’, ‘savings accounts’ and ‘ISAs’.  The list of 'sub links' can usually be closed by clicking on the top link again which opened the list of links.
+            A mega menu is a common feature on many websites.  A mega menu is a navigation menu that helps the user find content within a website.  Mega menus are created in a variety of different ways and some are not well designed with regards to accessibility.  A mega menu consist of a top link and a set of ‘sub links’.  When the top link is activated, a set of ‘sub links’ appear.  The top link describes a general overall topic and the ‘sub links’, are links to a more specific part of the web page.  For example on a groceries website, the top links could be ‘Fruit’ and ‘Vegetables’.  The sub links for ‘Fruit’ could be ‘Apples’, ‘Bananas’ etc, and the sub links for ‘Vegetables’ could be ‘Carrots’, ‘Broccoli’ etc.  Well designed navigation menus will have a number of extra pieces of information made available to screen reader users using aria code and other accessibility features.  This includes:
           </p>
-          <p>A well-designed mega menu uses something called ‘Aria Expanded’.  When Aria Expanded is used, the state of the menu, either collapsed or expanded, is announced to screen reader users.  Therefore, when navigating near the top of the page, if a screen reader hears the word ‘collapsed’ after a link, it is a strong indication to suggest that that link is a mega menu, and activating that link will open a list of further more specific links.
-          The example mega menu here consists of a top link ‘Widgets’, referring to the contents on this page.  When the link is activated, a list of links appears which takes the user to specific parts of the Widgets web page (for example ‘Tooltip’ or ‘Carousel’).  Press the TAB key, once the list of links has been opened, to navigate down the links.  Activating the ‘Widgets’ link once more closes the list of links.  The state of the list of links, (collapsed or expanded) is announce to screen reader users when the focus is placed on the ‘Widgets’ link.
-          </p>
+          <ul class="megaMenuList">
+            <li><strong>Aria Expanded:</strong>  When Aria Expanded is used, the state of the menu, either collapsed or expanded, is announced to screen reader users. The example mega menu here consists of a top link ‘AccessibilityWeb’, referring to the contents of this site. When the link is activated, a list of links appears which takes the user to specific page on the website. Press the TAB key, once the list of links has been opened, to navigate down the links. Activating the ‘AccessibilityWeb’ link once more closes the list of links, and the word 'collapsed' will be heard by screen reader users. </li>
+            <li><strong>Link and Button:</strong>  The top link appears to sighted users as a link and follows normal link behaviour.  For screen reader users, the link is announced as a button. Generally speaking, a link takes the user somewhere, and a button activates something.  With a navigation top link, the user is not being taken anywhere, activating the top link simply opens a menu, and therefore it is easier to conceive of the top link as a button.  There is a bit of code that announces the link as a button.  To conform to normal button behaviour, the top link will open the sub menu both when pressing the ‘SPACEBAR’ and ‘ENTER’ key.  Normally links will only open on the ‘ENTER’ key. The top menu link does not appear in the links list for screen reader users.</li>
+            <li><strong>Arrow Key Navigation:</strong> The sub menu links are navigable via the UP and DOWN ARROW KEYS, as well as using the TAB and SHIFT + TAB keys.  This makes the menu behave a bit more like a menu in an application.</li>
+            <li><strong>Aria-Current:</strong>  The current page is the ‘Widgets’ page.  A link to the ‘Widgets’ page appears in the list of sub links.  To help screen reader users know that the ‘Widgets’ page is the current page, this is announced.</li>
+          </ul>
 
 
           <div class="megaMenuTopContainer exampleMarginLeft">
-            <a id="menuTop" aria-expanded="false" class="megaMenuTopLink exampleMarginLeft" style="color:white;"  onMouseOver="this.style.textDecoration='underline'"
-   onMouseOut="this.style.textDecoration='none'">Widgets</a><!--For some bizarre reason colour and hover underline will not work here with CSS.  Used inline styles and inline JavaScript to achieve results-->
+            <a id="menuTop" aria-expanded="false" aria-haspopup="true" class="megaMenuTopLink exampleMarginLeft" role="button" tabindex="0" aria-controls="subMenu" aria-owns="subMenu" style="margin-top:100px;">AccessiblityWeb</a>
             <br />
           </div>
+          <div aria-labelledby="menuTop">
           <ul style="list-style-type:none;" id="subMenu" class="megaMenuOverall hidden exampleMarginLeft"> <!--list style type = none gets rid of the bullets.  Didn't seem to work when I tried with css-->
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#formsAndValidation">Forms and Validation</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#megaMenu">Mega Menu</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#tooltip">Tooltip</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#carousel">Carousel</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#tabPanel">Tab Panel</a></li>
-            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="#datePicker">Date Picker</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="elements.html" id="elements">Elements</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="focus.html" id="focus">Focus</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="imagesandvideo.html" id="images">Images & Video</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="widgets.html" aria-current="page" id="widgets">Widgets</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="adjustments.html" id="adjustments">Adjustments</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="accessibilityaids.html" id="aids">Aids</a></li>
+            <li class="megaMenuSubMenu"><a class="nav-link text-white" href="about.html" id="about">About</a></li>
           </ul>
+          </div>
         </section>
         <section>
           <h2 class="headingTopPadding" id="tooltip" tabindex="-1">Tooltip</h2>
@@ -233,7 +239,7 @@
             Activating the tab (bit at the top), by clicking on the tab or by navigating to the tab using the TAB key or ARROW keys reveals the content of the tab in the tab panel.  Only the content in the active tab panel can be seen or read out loud by a screen reader.</p>
           </p>
           <p>
-            For keyboard only users, to change the selected tab, use the TAB key to enter the tab list.  Once in the tab list, use the LEFT and RIGHT ARROW keys to move to the next tab.  For screen reader users, the total number of tabs in the tab list should be announced when entering the tab list.  To move out of the tab list and get to the content in the tab panel, press the TAB key.  To move back to the tab list from the tab panel, press the SHIFT key and TAB key.
+            For keyboard only users, to change the selected tab, use the TAB key to enter the tab list.  Once in the tab list, use the LEFT and RIGHT ARROW keys to move to the next tab.  For screen reader users, the total number of tabs in the tab list should be announced when entering the tab list.  To move out of the tab list and get to the content in the tab panel, press the TAB key.  To move back to the tab list from the tab panel, press the SHIFT key and TAB key.  Whether or not the current tab is selected will be announced to screen reader users with the word "selected".  This is generated using a bit of code called 'Aria-Selected'.
           </p>
           <p>
             The following example has three tab panels describing different dishes; frittata, pizza and quiche.
@@ -245,7 +251,7 @@
             <div class="Tab" id="Pizza" role="tab"><strong>Pizza</strong></div>
             <div class="Tab" id="Quiche" role="tab"><strong>Quiche</strong></div>
           </div>
-            <div class="TabContainer tabPanelBottomPadding" role="tabpanel" id="TabMain" tabindex="0">
+            <div class="TabContainer" role="tabpanel" id="TabMain" tabindex="0">
               <img src="images/Frittata_Resized.jpg" height="242" width="300" alt="Frittata" id="TabImage">
               <span class="carouselText" id="TabText">
               Frittata is an Italian dish similar to an omlette or quiche.  It is egg based and contains potatoes and does not have a crust.

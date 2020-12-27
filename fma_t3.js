@@ -588,8 +588,116 @@ window.onload = function () { //anonymous function to invoke the button event li
   }
   let menuHeader = document.getElementById("menuTop");//creates a variable which is used to store the identity of the top of the mega menu
 	menuHeader.addEventListener("click", toggleMenu, false);//adds an event listener for the megamenu list
+  menuHeader.addEventListener('keydown', function(event){//adds an event listener to the menu header to listen for the space and enter keys
+   if(event.keyCode == '32' ){//toggles menu when space is pressed
+     toggleMenu();
+     event.preventDefault()//prevents the spacebar from scrolling down further when space key is pressed.
+      }
+  if(event.keyCode == '13' ){//toggles the menu when Enter is pressed
+    toggleMenu();
+
+     }
+  });
+
+  let elementsMenuLink = document.getElementById("elements"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  elementsMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("menuTop").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("focus").focus();
+  event.preventDefault();
+   }
+  });
+
+
+  let focusMenuLink = document.getElementById("focus"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  focusMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("elements").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("images").focus();
+  event.preventDefault();
+   }
+  });
+
+  let imagesMenuLink = document.getElementById("images"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  imagesMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("focus").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("widgets").focus();
+  event.preventDefault();
+   }
+  });
+
+  let widgetsMenuLink = document.getElementById("widgets"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  widgetsMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("images").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("adjustments").focus();
+  event.preventDefault();
+   }
+  });
+
+  let adjustmentsMenuLink = document.getElementById("adjustments"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  adjustmentsMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("widgets").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("aids").focus();
+  event.preventDefault();
+   }
+  });
+
+  let aidsMenuLink = document.getElementById("aids"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  aidsMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("adjustments").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("about").focus();
+  event.preventDefault();
+   }
+  });
+
+  let aboutMenuLink = document.getElementById("about"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  aboutMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("aids").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("menuTop").focus();
+  event.preventDefault();
+   }
+  });
+
+  let menuTopMenuLink = document.getElementById("menuTop"); //Moves the focus up and down from the element with the current focus in the navigation submenu.
+  menuTopMenuLink.addEventListener('keydown', function(event){
+  if(event.keyCode == '38' ){
+  document.getElementById("about").focus();
+  event.preventDefault();
+   }
+  if(event.keyCode == '40' ){
+  document.getElementById("elements").focus();
+  event.preventDefault();
+   }
+  });
+
   let tooltipTrigger = document.getElementById("email"); //creates a variable which is used to store the identity of the top of the mega menu
-	tooltipTrigger.addEventListener("mouseover", revealTooltip, false); //triggers the revealTooltip function on mouse over
+  tooltipTrigger.addEventListener("mouseover", revealTooltip, false); //triggers the revealTooltip function on mouse over
 	tooltipTrigger.addEventListener("mouseout", hideTooltip, false);//triggers the hideTooltip function on mouseout
 	tooltipTrigger.addEventListener("focus", revealTooltip, false);//triggers the reveal Tooltip function on focus.
 	tooltipTrigger.addEventListener("blur", hideTooltip, false);//triggers the hideTooltip function when focus is moved to next focusable element
