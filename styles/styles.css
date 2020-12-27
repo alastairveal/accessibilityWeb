@@ -345,13 +345,25 @@ select{
   padding-right:10px;
 }
 
+.megaMenuList{ /*creates a bit of space underneath the mega menu list before the megaMenu itself*/
+  padding-bottom: 30px;
+}
+
+.megaMenuTopLink:focus{/*Changes the colour on focus to make the change in outline colour perceivable*/
+  background-color: #C2C2A3;
+  color: black;
+}
+
+.megaMenuTopLink:hover{/*prevents the colour of link  being changed dark blue on hover*/
+  color:white;
+  background-color: black;
+}
+
 .megaMenuOverall{
   display: inline-block;
   position: absolute;
-  left: 8px;
+  left: -8px;
 }
-
-
 
 .megaMenuTopContainer{
   padding-bottom: 8px; /*means that the mega menu sub menu appears below*/
@@ -466,9 +478,7 @@ select{
   border-right-style: solid;
 }
 
-.tabPanelBottomPadding{
-  padding-bottom: 6rem;
-} /*not sure why but the tab panel isn't giving content underneath space, this is to provide the needed padding*/
+
 
 
 /*WINDOW PAGE*/
